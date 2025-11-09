@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADAVE - Etapa II</title>
+    <link rel="stylesheet" href="css/alert2ok.css">
+</head>
+<body>
+    </div>
+    <div id="alert-container">
+        <h1>AVISO IMPORTANTE!</h1>
+        <br>
+        <br>
+        <br>
+        <div class="liberado">
+            <h2 style="margin: 0;">PACIENTE LIBERADO PARA A ETAPA II</h2>
+          </div>
+        <br>
+        <br>
+        <p>(Acompanhe a refeição iniciando  com a  consistência pastosa - nível 4 IDDSI e evolua conforme desempenho do paciente na etapa II)</p>
+        <br>
+        <br>
+        <button id="continue-button">Continuar para a Etapa II</button>
+    </div>
+    <script>
+       document.getElementById('continue-button').addEventListener('click', () => {
+        // Usando localStorage para indicar que a etapa 1 foi completada e deve começar na pergunta 9
+        localStorage.setItem('step', '9');
+
+        // Redireciona imediatamente para index2.html
+        window.location.href = 'quiz.html';
+    });
+    </script>
+</body>
+</html>

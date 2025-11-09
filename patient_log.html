@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Registro de Paciente</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+    <main id="main-container">
+      <h1>Registro de Paciente</h1>
+      <form id="patient-form">
+        <div class="form-group">
+          <label for="name">Nome do Paciente:</label>
+          <input type="text" id="name" name="name" maxlength="50" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date-birth">Data de Nascimento:</label>
+          <input
+            type="date"
+            id="date-birth"
+            name="date-birth"
+            min="1900-01-01"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="date-avc">Data do AVC:</label>
+          <input
+            type="date"
+            id="date-avc"
+            name="date-avc"
+            min="2000-01-01"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="locallesao">Local da lesão:</label>
+          <select id="locallesao" name="locallesao" required>
+            <option value="">Selecione</option>
+            <option value="Hemisfério direito">Hemisfério direito</option>
+            <option value="Hemisfério esquerdo">Hemisfério esquerdo</option>
+            <option value="Bilateral">Bilateral</option>
+            <option value="Tronco cerebral">Tronco cerebral</option>
+            <option value="Sem especificações">Sem especificações</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Sexo:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="unit">Unidade de Aplicação:</label>
+          <select id="unit" name="unit" required>
+            <option value="">Selecione</option>
+            <option value="Centro de Reabilitação">
+              Centro de Reabilitação
+            </option>
+            <option value="Enfermaria">Enfermaria</option>
+            <option value="UBS">UBS</option>
+            <option value="Pronto Socorro">Pronto Socorro</option>
+            <option value="Unidade de AVC">Unidade de AVC</option>
+            <option value="UTI">UTI</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-button">Iniciar Avaliação</button>
+      </form>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="script/layout.js"></script>
+    <script>
+      document
+        .getElementById("patient-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+
+          // Store all form data in localStorage
+          for (let [key, value] of formData.entries()) {
+            localStorage.setItem(key, value);
+          }
+
+          // Apply transition effect
+          document.body.classList.add("fade-out");
+
+          // Redirect to phase 1
+          setTimeout(() => {
+            window.location.href = "fase_1.html";
+          }, 500);
+        });
+    </script>
+  </body>
+</html>

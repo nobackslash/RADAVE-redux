@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RADAVE - Resultado</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+
+    <body>
+        <div data-include="partials/header.html"></div>
+
+        <main id="main-container">
+            <div id="alert-container" class="alert-ok">
+                <h1>AVISO</h1>
+                <div id="message">
+                    <h2 class="final">QUESTIONÁRIO FINALIZADO</h2>
+                    <strong class="paciente"
+                        >PACIENTE SEM RISCO NO MOMENTO, MANTENHA A
+                        OBSERVAÇÃO</strong
+                    >
+                    <p>Obrigado por responder ao questionário.</p>
+                    <p>
+                        Clique no botão abaixo para salvar os dados do paciente
+                    </p>
+                </div>
+                <button id="save-data-btn">Salvar os dados</button>
+                <div id="loading">Gravando dados, aguarde...</div>
+            </div>
+        </main>
+
+        <div data-include="partials/footer.html"></div>
+
+        <script src="script/datasave.js"></script>
+    </body>
+</html>
