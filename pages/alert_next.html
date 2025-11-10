@@ -25,10 +25,10 @@
     </div>
     <script>
        document.getElementById('continue-button').addEventListener('click', () => {
-        // Usando localStorage para indicar que a etapa 1 foi completada e deve começar na pergunta 9
-        localStorage.setItem('step', '9');
+        // Usando sessionStorage para indicar que a etapa 1 foi completada e deve começar na pergunta 9
+        sessionStorage.setItem('step', '9');
 
-        // Redireciona imediatamente para index2.html
+        // Redireciona para a página de quiz (relative path)
         window.location.href = 'quiz.html';
     });
     </script>

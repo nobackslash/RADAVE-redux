@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RADAVE</title>
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-        <header id="header"></header>
-        <main id="main-container">
-            <div>
-                <h1>
-                    Rastreamento para a disfagia no acidente vascular encefálico
-                </h1>
-                <h3>Bem-vindo ao sistema de Questionário RADAVE</h3>
-                <p>Clique no botão abaixo para iniciar um novo registro.</p>
-                <div class="options-main">
-                    <button id="start-button" class="primary-button">
-                        Novo Registro
-                    </button>
-                    <a
-                        href="pages/visualizacao.html"
-                        id="data-view"
-                        class="link-primary"
-                        >Visualização de registros</a
-                    >
-                </div>
-            </div>
-        </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+    <main id="main-container">
+      <div>
+        <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
+        <h3>Bem-vindo ao sistema de Questionário RADAVE</h3>
+        <p>Clique no botão abaixo para iniciar um novo registro.</p>
+        <div class="options-main">
+          <button id="start-button" class="primary-button">
+            Novo Registro
+          </button>
 
-        <script>
-            document
-                .getElementById("start-button")
-                .addEventListener("click", () => {
-                    document.body.classList.add("fade-out");
-                    setTimeout(() => {
-                        window.location.href = "pages/cadastro.html";
-                    }, 500);
-                });
+          <a href="pages/visualizacao.html" id="data-view" class="link-primary"
+            >Visualização de registros</a
+          >
+        </div>
+      </div>
+    </main>
 
-            document
-                .getElementById("data-view")
-                .addEventListener("click", (e) => {
-                    e.preventDefault();
-                    document.body.classList.add("fade-out");
-                    setTimeout(() => {
-                        window.location.href = e.target.href;
-                    }, 500);
-                });
-        </script>
-        <footer id="footer"></footer>
-        <script src="js/layout.js"></script>
-    </body>
+    <script>
+      document.getElementById("start-button").addEventListener("click", () => {
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = "pages/cadastro.html";
+        }, 500);
+      });
+
+      document.getElementById("data-view").addEventListener("click", (e) => {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = e.target.href;
+        }, 500);
+      });
+    </script>
+    <footer id="footer"></footer>
+    <script src="js/layout.js"></script>
+  </body>
 </html>

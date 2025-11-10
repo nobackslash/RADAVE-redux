@@ -1,274 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RADAVE - Etapa II</title>
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Etapa II</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+  </head>
 
-    <body>
-        <header id="header"></header>
+  <body>
+    <header id="header"></header>
 
-        <main id="main-container">
-            <div id="quiz-container">
-                <h1>
-                    Rastreamento para a disfagia no acidente vascular encefálico
-                </h1>
-                <div id="user-summary">
-                    <h2>Informações do Paciente</h2>
-                    <p>
-                        <strong>Nome:</strong> <span id="summary-name"></span>
-                    </p>
-                    <p>
-                        <strong>Idade:</strong> <span id="summary-age"></span>
-                    </p>
-                    <p>
-                        <strong>Data do AVC:</strong>
-                        <span id="summary-date-avc"></span>
-                    </p>
-                    <p>
-                        <strong>Gênero:</strong>
-                        <span id="summary-gender"></span>
-                    </p>
-                </div>
-                <br /><br />
-                <form id="quiz-form">
-                    <div id="step-9" class="step">
-                        <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a
-                            deglutição do alimento (elevação laringea)
-                        </p>
-                        <br /><br />
-                        <h1>
-                            9. Apresenta dificuldade de engolir o volume
-                            colocado na boca?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Demora muito
-                            para engolir, não engole, necessita de orientações
-                            verbais constantes para a deglutição.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q9" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q9" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q9" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-10" class="step" style="display: none">
-                        <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a
-                            região oral
-                        </p>
-                        <br />
-                        <h1>
-                            10. Apresenta escape de alguma consistência
-                            alimentar para fora da cavidade oral?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Saida do
-                            alimento para fora da boca.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q10" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q10" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q10" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-11" class="step" style="display: none">
-                        <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a
-                            elevação de laringe.
-                        </p>
-                        <br />
-                        <h1>
-                            11. Engoliu mais de 3 vezes a porção colocada na
-                            boca?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Engole mais
-                            de 3 vezes
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q11" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q11" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q11" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-12" class="step" style="display: none">
-                        <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe os
-                            sinais
-                        </p>
-                        <br />
-                        <h1>
-                            12. Apresenta pigarros, tosses e/ou engasgos durante
-                            a refeição?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Tosses
-                            pigarros e/ou engasgos durante a refeição
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q12" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q12" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q12" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-13" class="step" style="display: none">
-                        <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Depois que o
-                            paciente engolir, observe sua cavidade oral
-                        </p>
-                        <br />
-                        <h1>
-                            13. Apresenta resíduo de alguma consistência
-                            alimentar na cavidade oral depois que engole?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Acúmulo de
-                            alimento dentro da boca
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q13" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q13" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q13" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <button type="button" id="next-button">
-                        Próxima Pergunta
-                    </button>
-                </form>
-            </div>
-        </main>
+    <main id="main-container">
+      <div id="quiz-container">
+        <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
+        <form id="quiz-form">
+          <div id="user-summary">
+            <h2>Informações do Paciente</h2>
+            <p>
+              <strong>Nome:</strong>
+              <span id="summary-name"></span>
+            </p>
+            <p>
+              <strong>Idade:</strong>
+              <span id="summary-age"></span>
+            </p>
+            <p>
+              <strong>Data do AVC:</strong>
+              <span id="summary-date-avc"></span>
+            </p>
+            <p>
+              <strong>Gênero:</strong>
+              <span id="summary-gender"></span>
+            </p>
+          </div>
+          <hr />
 
-        <div data-include="partials/footer.html"></div>
+          <!-- perguntas -->
+          <h2>Etapa II - SINAIS E SINTOMAS</h2>
+          <div id="step-9" class="step">
+            <h1>
+              9. Apresenta dificuldade de engolir o volume colocado na boca?
+            </h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe a deglutição do
+              alimento (elevação laringea)
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Demora muito para engolir,
+              não engole, necessita de orientações verbais constantes para a
+              deglutição.
+            </p>
+            <label>
+              <input type="radio" name="q9" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q9" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q9" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div id="step-10" class="step">
+            <h1>
+              10. Apresenta escape de alguma consistência alimentar para fora da
+              cavidade oral?
+            </h1>
+            <p><strong>Instrução Enfermaria:</strong> Observe a região oral</p>
+            <p>
+              <strong>Possíveis alterações:</strong> Saida do alimento para fora
+              da boca.
+            </p>
+            <label>
+              <input type="radio" name="q10" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q10" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q10" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div id="step-11" class="step">
+            <h1>11. Engoliu mais de 3 vezes a porção colocada na boca?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe a elevação de
+              laringe.
+            </p>
+            <p><strong>Possíveis alterações:</strong> Engole mais de 3 vezes</p>
+            <label>
+              <input type="radio" name="q11" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q11" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q11" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div id="step-12" class="step">
+            <h1>
+              12. Apresenta pigarros, tosses e/ou engasgos durante a refeição?
+            </h1>
+            <p><strong>Instrução Enfermaria:</strong> Observe os sinais</p>
+            <p>
+              <strong>Possíveis alterações:</strong> Tosses pigarros e/ou
+              engasgos durante a refeição
+            </p>
+            <label>
+              <input type="radio" name="q12" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q12" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q12" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div id="step-13" class="step">
+            <h1>
+              13. Apresenta resíduo de alguma consistência alimentar na cavidade
+              oral depois que engole?
+            </h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Depois que o paciente
+              engolir, observe sua cavidade oral
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Acúmulo de alimento dentro
+              da boca
+            </p>
+            <label>
+              <input type="radio" name="q13" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q13" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q13" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div class="button-box">
+            <button type="button" id="submit-button">Finalizar</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
-        <script src="script/include.js"></script>
-        <script>
-            // Função para formatar a data de AAAA-MM-DD para DD/MM/AAAA
-            function formatDate(dateString) {
-                const dateParts = dateString.split("-");
-                return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
-            }
+    <div data-include="partials/footer.html"></div>
 
-            // Recupera as informações do usuário do localStorage
-            document.getElementById("summary-name").textContent =
-                localStorage.getItem("name");
-            document.getElementById("summary-age").textContent =
-                localStorage.getItem("age");
+    <script src="../../js/layout.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (e) => {
+        e.preventDefault();
+        populateUserSummary();
+      });
 
-            // Aplica o formato DD/MM/AAAA à data do AVC
-            const dateAvc = localStorage.getItem("dateAvc");
-            document.getElementById("summary-date-avc").textContent =
-                formatDate(dateAvc);
+      function formatDate(dateString) {
+        const dateParts = dateString.split("-");
+        return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+      }
 
-            document.getElementById("summary-gender").textContent =
-                localStorage.getItem("gender");
+      function populateUserSummary() {
+        const p_name = sessionStorage.getItem("p_name") || "N/A";
+        const p_age = sessionStorage.getItem("p_age") || "N/A";
+        const p_dtavc = formatDate(sessionStorage.getItem("p_dtavc")) || "N/A";
+        const p_gender = sessionStorage.getItem("p_gender") || "N/A";
 
-            const nextButton = document.getElementById("next-button");
-            const steps = document.querySelectorAll(".step");
-            let currentStep = 0;
-            let score = parseInt(localStorage.getItem("score")) || 0; // recupera a pontuação da etapa 1
+        const summaryName = document.getElementById("summary-name");
+        const summaryAge = document.getElementById("summary-age");
+        const summaryAvc = document.getElementById("summary-date-avc");
+        const summaryGender = document.getElementById("summary-gender");
 
-            nextButton.addEventListener("click", () => {
-                const currentQuestion = steps[currentStep];
-                const selectedOption = currentQuestion.querySelector(
-                    'input[type="radio"]:checked'
-                );
-
-                if (selectedOption) {
-                    // Armazena a resposta no localStorage
-                    localStorage.setItem(
-                        "q" + (currentStep + 9),
-                        selectedOption.value
-                    );
-
-                    if (selectedOption.value === "1") {
-                        score += parseInt(selectedOption.value); // Acumula a pontuação
-                    }
-
-                    // Atualiza a pontuação no localStorage
-                    localStorage.setItem("score", score);
-
-                    // Verifica se a pontuação atingiu 2 ou mais para interromper o questionário
-                    if (score >= 2) {
-                        document.body.classList.add("fade-out"); // Aplica o efeito de transição
-
-                        setTimeout(() => {
-                            window.location.href = "alert.html"; // Redireciona após a animação
-                        }, 500); // Tempo igual à transição CSS
-                        return;
-                    }
-
-                    currentQuestion.style.display = "none";
-                    currentStep++;
-
-                    if (currentStep < steps.length) {
-                        steps[currentStep].style.display = "block";
-                    } else {
-                        // Após a última pergunta, verifica a pontuação final
-                        const totalScore =
-                            parseInt(localStorage.getItem("score")) || 0; // Pontuação total
-                        document.body.classList.add("fade-out"); // Aplica o efeito de transição
-
-                        setTimeout(() => {
-                            if (totalScore < 1.9) {
-                                window.location.href = "alert_ok.html";
-                            } else {
-                                window.location.href = "alert_danger.html"; // Direciona para a tela de alerta se a pontuação for maior ou igual a 1
-                            }
-                        }, 500);
-                    }
-                } else {
-                    alert("Por favor, selecione uma resposta.");
-                }
-            });
-        </script>
-    </body>
+        summaryName.innerHTML = p_name;
+        summaryAge.innerHTML = p_age;
+        summaryAvc.innerHTML = p_dtavc;
+        summaryGender.innerHTML = p_gender;
+      }
+      // id submit button send to p2.html
+      document.getElementById("submit-button").addEventListener("click", () => {
+        window.location.href = "p2.html";
+      });
+    </script>
+  </body>
 </html>

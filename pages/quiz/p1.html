@@ -1,300 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RADAVE - Etapa I</title>
-        <link rel="stylesheet" href="../../css/styles.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Etapa I</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+  </head>
 
-    <body>
-        <header id="header"></header>
+  <body>
+    <header id="header"></header>
 
-        <main id="main-container">
-            <div id="quiz-container">
-                <h1>
-                    Rastreamento para a disfagia no acidente vascular encefálico
-                </h1>
-                <form id="quiz-form">
-                    <div id="user-summary">
-                        <!-- Resumo do usuário antes da pergunta -->
-                        <h2>Informações do Paciente</h2>
-                        <p>
-                            <strong>Nome:</strong>
-                            <span id="summary-name"></span>
-                        </p>
-                        <p>
-                            <strong>Idade:</strong>
-                            <span id="summary-age"></span>
-                        </p>
-                        <p>
-                            <strong>Data do AVC:</strong>
-                            <span id="summary-date-avc"></span>
-                        </p>
-                        <p>
-                            <strong>Gênero:</strong>
-                            <span id="summary-gender"></span>
-                        </p>
-                    </div>
+    <main id="main-container">
+      <div id="quiz-container">
+        <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
+        <form id="quiz-form">
+          <div id="user-summary">
+            <h2>Informações do Paciente</h2>
+            <p>
+              <strong>Nome:</strong>
+              <span id="summary-name"></span>
+            </p>
+            <p>
+              <strong>Idade:</strong>
+              <span id="summary-age"></span>
+            </p>
+            <p>
+              <strong>Data do AVC:</strong>
+              <span id="summary-date-avc"></span>
+            </p>
+            <p>
+              <strong>Gênero:</strong>
+              <span id="summary-gender"></span>
+            </p>
+          </div>
+          <hr />
 
-                    <!-- Perguntas -->
-                    <hr />
-                    <div id="step-1" class="step">
-                        <h2>Etapa 1 - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Chame o
-                            paciente pelo nome e observe.
-                        </p>
-                        <br />
-                        <h1>1. Apresenta dificuldade de manter-se acordado?</h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Não responde,
-                            sonolento, necessitando de estímulos verbais e
-                            táteis para se manter alerta
-                        </p>
-                        <label>
-                            Sim
-                            <input type="radio" name="q1" value="1" />
-                        </label>
-                        <label>
-                            <input type="radio" name="q1" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q1" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
-                    <div id="step-2" class="step">
-                        <h2>Etapa 1 - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Pergunte ao
-                            paciente, acompanhe ou cheque o prontuário
-                        </p>
-                        <br />
-                        <h1>
-                            2. Apresenta histórico de dificuldade de deglutição?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Engasgos,
-                            tosses durante a alimentação, uso de via alternativa
-                            de alimentação, necessidade de adaptação da dieta
-                            previamente
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q2" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q2" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q2" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <!-- perguntas -->
+          <h2>Etapa 1 - FATORES PREDITIVOS DE RISCO</h2>
+          <div id="step-1" class="step">
+            <h1>1. Apresenta dificuldade de manter-se acordado?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Chame o paciente pelo nome
+              e observe.
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Não responde, sonolento,
+              necessitando de estímulos verbais e táteis para se manter alerta
+            </p>
+            <label>
+              <input type="radio" name="q1" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q1" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q1" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div id="step-2" class="step">
+            <h1>2. Apresenta histórico de dificuldade de deglutição?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Pergunte ao paciente,
+              acompanhe ou cheque o prontuário
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Engasgos, tosses durante a
+              alimentação, uso de via alternativa de alimentação, necessidade de
+              adaptação da dieta previamente
+            </p>
+            <label>
+              <input type="radio" name="q2" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q2" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q2" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-3" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Posture o
-                            paciente sentado com o decúbito elevado
-                        </p>
-                        <br />
-                        <h1>
-                            3. Apresenta dificuldade de manter-se sentado com
-                            apoio e com a cabeça reta?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Não mantém
-                            controle da cabeça e/ou de tronco mesmo que apoiado.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q3" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q3" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q3" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <div id="step-3" class="step">
+            <h1>
+              3. Apresenta dificuldade de manter-se sentado com apoio e com a
+              cabeça reta?
+            </h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Posture o paciente sentado
+              com o decúbito elevado
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Não mantém controle da
+              cabeça e/ou de tronco mesmo que apoiado.
+            </p>
+            <label>
+              <input type="radio" name="q3" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q3" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q3" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-4" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a voz
-                            do paciente durante a conversa
-                        </p>
-                        <br />
-                        <h1>4. Apresenta alteração na voz?</h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Voz rouca,
-                            sem sonorização ou pouca sonorização.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q4" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q4" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q4" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <div id="step-4" class="step">
+            <h1>4. Apresenta alteração na voz?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe a voz do paciente
+              durante a conversa
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Voz rouca, sem sonorização
+              ou pouca sonorização.
+            </p>
+            <label>
+              <input type="radio" name="q4" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q4" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q4" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-5" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a
-                            fala e linguagem do paciente durante a conversa
-                            espontânea
-                        </p>
-                        <br />
-                        <h1>
-                            5. Apresenta dificuldade na fala e/ou linguagem?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Não fala,
-                            fala arrastada, alteração na articulação
-                            (disartria), dificuldade para compreender o
-                            discurso, expressões orais fragmentadas, discurso
-                            incoerente
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q5" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q5" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q5" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <div id="step-5" class="step">
+            <h1>5. Apresenta dificuldade na fala e/ou linguagem?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe a fala e linguagem
+              do paciente durante a conversa espontânea
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Não fala, fala arrastada,
+              alteração na articulação (disartria), dificuldade para compreender
+              o discurso, expressões orais fragmentadas, discurso incoerente
+            </p>
+            <label>
+              <input type="radio" name="q5" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q5" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q5" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-6" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe a
-                            face no repouso e solicite bico e sorriso
-                        </p>
-                        <br />
-                        <h1>6. Apresenta assimetria facial?</h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Redução ou
-                            ausência total do movimento de um dos lados da face.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q6" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q6" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q6" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <div id="step-6" class="step">
+            <h1>6. Apresenta assimetria facial?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe a face no repouso e
+              solicite bico e sorriso
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Redução ou ausência total
+              do movimento de um dos lados da face.
+            </p>
+            <label>
+              <input type="radio" name="q6" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q6" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q6" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-7" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Solicite que
-                            o paciente mexa os lábios e a língua
-                        </p>
-                        <br />
-                        <h1>
-                            7. Apresenta dificuldade de movimentar lábios e
-                            língua?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Não apresenta
-                            movimento, movimento lentificado, desvio do
-                            movimento.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q7" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q7" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q7" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <hr />
+          <div id="step-7" class="step">
+            <h1>7. Apresenta dificuldade de movimentar lábios e língua?</h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Solicite que o paciente
+              mexa os lábios e a língua
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Não apresenta movimento,
+              movimento lentificado, desvio do movimento.
+            </p>
+            <label>
+              <input type="radio" name="q7" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q7" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q7" value="-1" /> Não se aplica
+            </label>
+          </div>
 
-                    <div id="step-8" class="step">
-                        <h2>Etapa I - FATORES PREDITIVOS DE RISCO</h2>
-                        <p>
-                            <strong>Instrução Enfermaria:</strong> Observe se o
-                            paciente engole a saliva(movimento de subida
-                            laringe) espontaneamente o sob comando
-                        </p>
-                        <br />
-                        <h1>
-                            8. Apresenta dificuldade de engolir e gerenciar a
-                            deglutição de saliva/secreções espontaneamente ou
-                            sob comando?
-                        </h1>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Não observa
-                            deglutição, acúmulo de saliva na cavidade oral,
-                            baba, voz molhada, ruídos em via aérea alta.
-                        </p>
-                        <br /><br />
-                        <label>
-                            <input type="radio" name="q8" value="1" />
-                            Sim </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q8" value="0" />
-                            Não </label
-                        ><br />
-                        <label>
-                            <input type="radio" name="q8" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <button type="submit" id="submit-button">Analisar</button>
-                </form>
-            </div>
-        </main>
+          <div id="step-8" class="step">
+            <h1>
+              8. Apresenta dificuldade de engolir e gerenciar a deglutição de
+              saliva/secreções espontaneamente ou sob comando?
+            </h1>
+            <p>
+              <strong>Instrução Enfermaria:</strong> Observe se o paciente
+              engole a saliva(movimento de subida laringe) espontaneamente o sob
+              comando
+            </p>
+            <p>
+              <strong>Possíveis alterações:</strong> Não observa deglutição,
+              acúmulo de saliva na cavidade oral, baba, voz molhada, ruídos em
+              via aérea alta.
+            </p>
+            <label>
+              <input type="radio" name="q8" value="1" />
+              Sim
+            </label>
+            <label>
+              <input type="radio" name="q8" value="0" />
+              Não
+            </label>
+            <label>
+              <input type="radio" name="q8" value="-1" /> Não se aplica
+            </label>
+          </div>
+          <div class="button-box">
+            <button type="submit" id="submit-button">Analisar</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
-        <footer id="footer"></footer>
-        <script>
-            // Função para formatar a data de AAAA-MM-DD para DD/MM/AAAA
-            function formatDate(dateString) {
-                const dateParts = dateString.split("-");
-                return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
-            }
-        </script>
-    </body>
+    <footer id="footer"></footer>
+    <script src="../../js/layout.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (e) => {
+        e.preventDefault();
+        populateUserSummary();
+      });
+
+      function formatDate(dateString) {
+        const dateParts = dateString.split("-");
+        return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+      }
+
+      function populateUserSummary() {
+        const p_name = sessionStorage.getItem("p_name") || "N/A";
+        const p_age = sessionStorage.getItem("p_age") || "N/A";
+        const p_dtavc = formatDate(sessionStorage.getItem("p_dtavc")) || "N/A";
+        const p_gender = sessionStorage.getItem("p_gender") || "N/A";
+
+        const summaryName = document.getElementById("summary-name");
+        const summaryAge = document.getElementById("summary-age");
+        const summaryAvc = document.getElementById("summary-date-avc");
+        const summaryGender = document.getElementById("summary-gender");
+
+        summaryName.innerHTML = p_name;
+        summaryAge.innerHTML = p_age;
+        summaryAvc.innerHTML = p_dtavc;
+        summaryGender.innerHTML = p_gender;
+      }
+      // id submit button send to p2.html
+      document.getElementById("submit-button").addEventListener("click", () => {
+        window.location.href = "p2.html";
+      });
+    </script>
+  </body>
 </html>

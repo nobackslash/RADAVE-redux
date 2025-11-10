@@ -1,32 +1,54 @@
 <header
   role="banner"
-  class="site-header"
   aria-label="RADAVE header"
   style="margin-bottom: 1rem"
+  justify-content="space-between"
 >
-  <div style="display: flex; align-items: center; gap: 1rem">
-    <div
-      style="
-        width: 48px;
-        height: 48px;
-        background: var(--primary);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 700;
-      "
-    >
-      R
-    </div>
-    <div>
-      <div style="font-weight: 700; color: var(--accent-strong)">RADAVE</div>
-      <div style="font-size: 0.85rem; color: var(--text-muted)">
-        Rastreamento para disfagia
+  <div class="big-div" style="display: flex; justify-content: space-between">
+    <!-- div esquerda -->
+    <div style="display: flex; align-items: center; gap: 1rem">
+      <div
+        style="
+          width: 48px;
+          height: 48px;
+          background: var(--primary);
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-weight: 700;
+        "
+      >
+        R
+      </div>
+      <div>
+        <div style="font-weight: 700; color: var(--accent-strong)">RADAVE</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted)">
+          Rastreamento para disfagia
+        </div>
       </div>
     </div>
+    <!-- div direita -->
+    <a
+      href="/index.html"
+      class="home-button"
+      style="display: flex; align-items: center; margin: 10px"
+    >
+      <img width="20px" src="/assets/home.png" alt="" />
+    </a>
+
+    <script>
+      const homeButton = document.querySelector(".home-button");
+      homeButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = "/index.html";
+
+        sessionStorage.clear();
+      });
+    </script>
   </div>
+
   <!-- <nav aria-label="main navigation" style="margin-top: 0.75rem">
     <a href="index.html" style="margin-right: 1rem">Início</a>
     <a href="fase_1.html" style="margin-right: 1rem">Questionário</a>

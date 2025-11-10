@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RADAVE - Alerta</title>
-        <link rel="stylesheet" href="css/styles.css" />
-    </head>
-    <body>
-        <div data-include="partials/header.html"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Alerta</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div data-include="partials/header.html"></div>
 
-        <main id="main-container">
-            <div id="alert-container" class="alert-danger">
-                <h1>AVISO IMPORTANTE!</h1>
+    <main id="main-container">
+      <div id="alert-container" class="alert-danger">
+        <h1>AVISO IMPORTANTE!</h1>
 
-                <div id="message">
-                    <h3 style="color: var(--danger)">
-                        PACIENTE EM RISCO DE DISFAGIA E ASPIRAÇÃO
-                        LARINGOTRAQUEAL!
-                    </h3>
-                    <p style="font-size: 0.95rem">
-                        NECESSÁRIA A AVALIAÇÃO DO FONOAUDIÓLOGO ESPECIALISTA EM
-                        DISFAGIA PARA CONFIRMAR O DIAGNÓSTICO.
-                    </p>
-                </div>
+        <div id="message">
+          <h3 style="color: var(--danger)">
+            PACIENTE EM RISCO DE DISFAGIA E ASPIRAÇÃO LARINGOTRAQUEAL!
+          </h3>
+          <p style="font-size: 0.95rem">
+            NECESSÁRIA A AVALIAÇÃO DO FONOAUDIÓLOGO ESPECIALISTA EM DISFAGIA
+            PARA CONFIRMAR O DIAGNÓSTICO.
+          </p>
+        </div>
 
-                <!-- Botão para gravar os dados -->
-                <button id="save-data-btn">Salvar os dados</button>
-                <div id="loading">Gravando dados, aguarde...</div>
-            </div>
-        </main>
+        <!-- Botão para gravar os dados -->
+        <button id="save-data-btn">Salvar os dados</button>
+        <div id="loading">Gravando dados, aguarde...</div>
+      </div>
+    </main>
 
-        <div data-include="partials/footer.html"></div>
+    <div data-include="partials/footer.html"></div>
 
-        <script src="js/datasave.js"></script>
-    </body>
+    <script src="js/datasave.js"></script>
+  </body>
 </html>
