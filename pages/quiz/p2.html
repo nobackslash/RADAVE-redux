@@ -150,7 +150,7 @@
             </label>
           </div>
           <div class="button-box">
-            <button type="button" id="submit-button">Finalizar</button>
+            <button type="submit" id="submit-button">Finalizar</button>
           </div>
         </form>
       </div>
@@ -159,36 +159,12 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="../../js/layout.js"></script>
+    <script src="../../js/quizCommon.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", (e) => {
+      document.getElementById("quiz-form").addEventListener("submit", function(e) {
         e.preventDefault();
-        populateUserSummary();
-      });
-
-      function formatDate(dateString) {
-        const dateParts = dateString.split("-");
-        return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
-      }
-
-      function populateUserSummary() {
-        const p_name = sessionStorage.getItem("p_name") || "N/A";
-        const p_age = sessionStorage.getItem("p_age") || "N/A";
-        const p_dtavc = formatDate(sessionStorage.getItem("p_dtavc")) || "N/A";
-        const p_gender = sessionStorage.getItem("p_gender") || "N/A";
-
-        const summaryName = document.getElementById("summary-name");
-        const summaryAge = document.getElementById("summary-age");
-        const summaryAvc = document.getElementById("summary-date-avc");
-        const summaryGender = document.getElementById("summary-gender");
-
-        summaryName.innerHTML = p_name;
-        summaryAge.innerHTML = p_age;
-        summaryAvc.innerHTML = p_dtavc;
-        summaryGender.innerHTML = p_gender;
-      }
-      // id submit button send to p2.html
-      document.getElementById("submit-button").addEventListener("click", () => {
-        window.location.href = "p2.html";
+        saveAnswers(['q9', 'q10', 'q11', 'q12', 'q13']);
+        window.location.href = "../visualizacao.html";
       });
     </script>
   </body>

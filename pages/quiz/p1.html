@@ -238,6 +238,7 @@
 
     <footer id="footer"></footer>
     <script src="../../js/layout.js"></script>
+    <script src="../../js/quizCommon.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
@@ -265,8 +266,10 @@
         summaryAvc.innerHTML = p_dtavc;
         summaryGender.innerHTML = p_gender;
       }
-      // id submit button send to p2.html
-      document.getElementById("submit-button").addEventListener("click", () => {
+
+      document.getElementById("quiz-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        saveAnswers(['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']);
         window.location.href = "p2.html";
       });
     </script>
