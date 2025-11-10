@@ -2,6 +2,7 @@
 :root {
     --primary: #005b96;
     --primary-light: #0077c2;
+    --primary-background: #e6f0fa;
     --primary-dark: #004b7c;
     --success: #28a745;
     --warning: #ffc107;
@@ -11,17 +12,14 @@
     --background: #f8f9fa;
     --white: #ffffff;
     --border: #dee2e6;
-    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-    line-height: 1.5;
     color: var(--text);
-    background: var(--background);
+    background: var(--primary-background);
     text-align: left;
-    width: 100%;
     justify-content: center;
     transition: 100ms;
 }

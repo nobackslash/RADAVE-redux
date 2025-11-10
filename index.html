@@ -19,23 +19,23 @@
                     <button id="start-button" class="primary-button">
                         Novo Registro
                     </button>
-                    <a href="data_view.html" id="data-view" class="link-primary"
+                    <a
+                        href="pages/visualizacao.html"
+                        id="data-view"
+                        class="link-primary"
                         >Visualização de registros</a
                     >
                 </div>
             </div>
         </main>
 
-        <div data-include="partials/footer.html"></div>
-
-        <script src="script/include.js"></script>
         <script>
             document
                 .getElementById("start-button")
                 .addEventListener("click", () => {
                     document.body.classList.add("fade-out");
                     setTimeout(() => {
-                        window.location.href = "patient_log.html";
+                        window.location.href = "pages/cadastro.html";
                     }, 500);
                 });
 
@@ -50,6 +50,6 @@
                 });
         </script>
         <footer id="footer"></footer>
-        <script src="script/layout.js"></script>
+        <script src="js/layout.js"></script>
     </body>
 </html>
