@@ -1,9 +1,9 @@
 async function loadLayout() {
   // time saving
-  const header = await fetch("/components/header.html").then((res) =>
+  const header = await fetch("../components/header.html").then((res) =>
     res.text()
   );
-  const footer = await fetch("/components/footer.html").then((res) =>
+  const footer = await fetch("../components/footer.html").then((res) =>
     res.text()
   );
 
