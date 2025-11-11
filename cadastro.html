@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RADAVE - Registro de Paciente</title>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
+</head>
 
-  <body>
-    <header
-      role="banner"
-      aria-label="RADAVE header"
-      style="margin-bottom: 1rem"
-      justify-content="space-between"
-    >
-      <div
-        class="big-div"
-        style="display: flex; justify-content: space-between"
-      >
-        <div style="display: flex; align-items: center; gap: 1rem">
-          <div
-            style="
+<body>
+    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+        <div class="big-div" style="display: flex; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div style="
               width: 48px;
               height: 48px;
               background: var(--primary);
@@ -30,163 +22,159 @@
               justify-content: center;
               color: #fff;
               font-weight: 700;
-            "
-          >
-            R
-          </div>
-          <div>
-            <div style="font-weight: 700; color: var(--accent-strong)">
-              RADAVE
+            ">
+                    R
+                </div>
+                <div>
+                    <div style="font-weight: 700; color: var(--accent-strong)">
+                        RADAVE
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted)">
+                        Rastreamento para disfagia
+                    </div>
+                </div>
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-muted)">
-              Rastreamento para disfagia
-            </div>
-          </div>
+            <a href="index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+                <img width="20px" src="assets/home.png" alt="" />
+            </a>
+
+            <script>
+                const homeButton = document.querySelector('.home-button');
+                homeButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.location.href = "index.html";
+
+                    sessionStorage.clear();
+                });
+            </script>
         </div>
-        <a
-          href="/index.html"
-          class="home-button"
-          style="display: flex; align-items: center; margin: 10px"
-        >
-          <img width="20px" src="/assets/home.png" alt="" />
-        </a>
-
-        <script>
-          homeButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.location.href = "/index.html";
-
-            sessionStorage.clear();
-          });
-        </script>
-      </div>
     </header>
 
     <main id="main-container">
-      <h1>Registro de Paciente</h1>
-      <form id="patient-form">
-        <div class="form-group">
-          <label for="p_name">Nome do Paciente:</label>
-          <input
-            type="text"
-            id="p_name"
-            name="p_name"
-            maxlength="50"
-            required
-          />
-        </div>
+        <h1>Registro de Paciente</h1>
+        <form id="patient-form">
+            <div class="form-group">
+                <label for="p_name">Nome do Paciente:</label>
+                <input type="text" id="p_name" name="p_name" maxlength="50" required />
+            </div>
 
-        <div class="form-group">
-          <label for="p_birth">Data de Nascimento:</label>
-          <input
-            type="date"
-            id="p_birth"
-            name="p_birth"
-            min="1900-01-01"
-            required
-          />
-        </div>
+            <div class="form-group">
+                <label for="p_birth">Data de Nascimento:</label>
+                <input type="date" id="p_birth" name="p_birth" min="1900-01-01" required />
+            </div>
 
-        <div class="form-group">
-          <label for="p_dtavc">Data do AVC:</label>
-          <input
-            type="date"
-            id="p_dtavc"
-            name="p_dtavc"
-            min="2000-01-01"
-            required
-          />
-        </div>
+            <div class="form-group">
+                <label for="p_dtavc">Data do AVC:</label>
+                <input type="date" id="p_dtavc" name="p_dtavc" min="2000-01-01" required />
+            </div>
 
-        <div class="form-group">
-          <label for="p_injure">Local da lesão:</label>
-          <select id="p_injure" name="p_injure" required>
-            <option value="">Selecione</option>
-            <option value="Hemisfério direito">Hemisfério direito</option>
-            <option value="Hemisfério esquerdo">Hemisfério esquerdo</option>
-            <option value="Bilateral">Bilateral</option>
-            <option value="Tronco cerebral">Tronco cerebral</option>
-            <option value="Sem especificações">Sem especificações</option>
-            <option value="Outros">Outros</option>
-          </select>
-        </div>
+            <div class="form-group">
+                <label for="p_injure">Local da lesão:</label>
+                <select id="p_injure" name="p_injure" required>
+                    <option value="">Selecione</option>
+                    <option value="Hemisfério direito">Hemisfério direito</option>
+                    <option value="Hemisfério esquerdo">Hemisfério esquerdo</option>
+                    <option value="Bilateral">Bilateral</option>
+                    <option value="Tronco cerebral">Tronco cerebral</option>
+                    <option value="Sem especificações">Sem especificações</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-          <label for="p_gender">Sexo:</label>
-          <select id="p_gender" name="p_gender" required>
-            <option value="">Selecione</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-          </select>
-        </div>
+            <div class="form-group">
+                <label for="p_gender">Sexo:</label>
+                <select id="p_gender" name="p_gender" required>
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-          <label for="p_place">Unidade de Aplicação:</label>
-          <select id="p_place" name="p_place" required>
-            <option value="">Selecione</option>
-            <option value="Centro de Reabilitação">
-              Centro de Reabilitação
-            </option>
-            <option value="Enfermaria">Enfermaria</option>
-            <option value="UBS">UBS</option>
-            <option value="Pronto Socorro">Pronto Socorro</option>
-            <option value="Unidade de AVC">Unidade de AVC</option>
-            <option value="UTI">UTI</option>
-          </select>
-        </div>
+            <div class="form-group">
+                <label for="p_place">Unidade de Aplicação:</label>
+                <select id="p_place" name="p_place" required>
+                    <option value="">Selecione</option>
+                    <option value="Centro de Reabilitação">
+                        Centro de Reabilitação
+                    </option>
+                    <option value="Enfermaria">Enfermaria</option>
+                    <option value="UBS">UBS</option>
+                    <option value="Pronto Socorro">Pronto Socorro</option>
+                    <option value="Unidade de AVC">Unidade de AVC</option>
+                    <option value="UTI">UTI</option>
+                </select>
+            </div>
 
-        <button type="submit" class="primary-button">Iniciar Avaliação</button>
-      </form>
+            <button type="submit" class="primary-button">Iniciar Avaliação</button>
+        </form>
     </main>
 
-    <footer
-      role="contentinfo"
-      aria-label="site footer"
-      style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
-    >
-      <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
-      <div style="margin-top: 0.25rem"></div>
-      <script>
-        document
-          .getElementById("footer-date")
-          ?.append(new Date().toLocaleDateString());
-      </script>
+    <footer role="contentinfo" aria-label="site footer"
+        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
+        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+        <div style="margin-top: 0.25rem"></div>
+        <script>
+            document
+                .getElementById("footer-date")
+                ?.append(new Date().toLocaleDateString());
+        </script>
     </footer>
     <script>
-      document
-        .getElementById("patient-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+        document
+            .getElementById("patient-form")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
 
-          window.location.href = "quiz/p1.html";
+                const p_name = document.getElementById("p_name").value.trim();
+                const p_birth = document.getElementById("p_birth").value;
+                const p_dtavc = document.getElementById("p_dtavc").value;
+                const p_injure = document.getElementById("p_injure").value;
+                const p_gender = document.getElementById("p_gender").value;
+                const p_place = document.getElementById("p_place").value;
 
-          const p_name = document.getElementById("p_name").value.trim();
-          const p_birth = document.getElementById("p_birth").value;
-          const p_dtavc = document.getElementById("p_dtavc").value;
-          const p_injure = document.getElementById("p_injure").value;
-          const p_gender = document.getElementById("p_gender").value;
-          const p_place = document.getElementById("p_place").value;
+                // calcular idade
+                let age = null;
+                if (p_birth) {
+                    const b = new Date(p_birth);
+                    const today = new Date();
+                    age = today.getFullYear() - b.getFullYear();
+                    const m = today.getMonth() - b.getMonth();
+                    if (m < 0 || (m === 0 && today.getDate() < b.getDate())) {
+                        age--;
+                    }
+                }
 
-          // compute age from birthdate
-          let age = null;
-          if (p_birth) {
-            const b = new Date(p_birth);
-            const today = new Date();
-            age = today.getFullYear() - b.getFullYear();
-            const m = today.getMonth() - b.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < b.getDate())) {
-              age--;
-            }
-          }
+                // salvar todos os dados na sessão
+                sessionStorage.setItem("p_name", p_name || "");
+                if (age !== null) sessionStorage.setItem("p_age", String(age));
+                sessionStorage.setItem("p_dtavc", p_dtavc || "");
+                sessionStorage.setItem("p_injure", p_injure || "");
+                sessionStorage.setItem("p_gender", p_gender || "");
+                sessionStorage.setItem("p_place", p_place || "");
 
-          // save all the session data
-          sessionStorage.setItem("p_name", p_name || "");
-          if (age !== null) sessionStorage.setItem("p_age", String(age));
-          sessionStorage.setItem("p_dtavc", p_dtavc || "");
-          sessionStorage.setItem("p_injure", p_injure || "");
-          sessionStorage.setItem("p_gender", p_gender || "");
-          sessionStorage.setItem("p_place", p_place || "");
-        });
+                // Criar objeto do paciente para localStorage
+                const patientData = {
+                    name: p_name || "",
+                    age: age || 0,
+                    avc_date: p_dtavc || "",
+                    gender: p_gender || "",
+                    local_wound: p_injure || "",
+                    unit: p_place || "",
+                    questions: {
+                        q1: 0, q2: 0, q3: 0, q4: 0, q5: 0, q6: 0, q7: 0, q8: 0,
+                        q9: 0, q10: 0, q11: 0, q12: 0, q13: 0
+                    }
+                };
+
+                // Obter dados existentes ou criar array vazio
+                let allData = JSON.parse(localStorage.getItem('patientData') || '[]');
+                allData.push(patientData);
+                localStorage.setItem('patientData', JSON.stringify(allData));
+
+                // Redireciona DEPOIS de salvar os dados, erro besta, é..
+                window.location.href = "quiz/p1.html";
+            });
     </script>
-  </body>
+</body>
+
 </html>

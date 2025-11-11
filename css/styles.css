@@ -154,3 +154,64 @@ select:focus {
   flex-direction: column;
   gap: 10px;
 }
+
+/* Para a página de Alerta */
+#alert-container {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.alert-ok {
+  background: var(--white);
+  border: 2px solid var(--success);
+}
+
+.alert-ok h1 {
+  color: var(--success);
+}
+
+.alert-ok .final {
+  color: var(--success);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.alert-ok .paciente {
+  color: var(--text);
+  font-size: 1.1rem;
+  display: block;
+  margin: 1rem 0;
+}
+
+.liberado {
+  background: var(--success);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+#save-data-btn, #continue-button {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+#save-data-btn:hover, #continue-button:hover {
+  background: var(--primary-dark);
+}
+
+#loading {
+  display: none;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}

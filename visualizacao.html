@@ -1,45 +1,94 @@
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADAVE</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
+    <title>RADAVE - Visualização de Registros</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
 
-  <body>
-    <header class="header"></header>
+<body>
+    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+        <div class="big-div" style="display: flex; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div style="
+              width: 48px;
+              height: 48px;
+              background: var(--primary);
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-weight: 700;
+            ">
+                    R
+                </div>
+                <div>
+                    <div style="font-weight: 700; color: var(--accent-strong)">
+                        RADAVE
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted)">
+                        Rastreamento para disfagia
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+                <img width="20px" src="assets/home.png" alt="" />
+            </a>
+
+            <script>
+                const homeButton = document.querySelector('.home-button');
+                homeButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.location.href = "index.html";
+
+                    sessionStorage.clear();
+                });
+            </script>
+        </div>
+    </header>
 
     <main id="main-container" class="data-view-main-container">
-      <h1>Sumário de resultados</h1>
-      <hr style="color: rgba(0, 0, 0, 0.18)" />
-      <section id="data" class="data-list">
-        <div class="entry">
-          <details>
-            <summary>
-              <section class="entry-patient-name">
-                <p id="patient-fullname">Luiz Otávio Moreira</p>
-              </section>
-              <section class="entry-patient-subtitle">
-                Unidade: São Hospital Pinheiros | Data do teste: 23/05/2025
-              </section>
-            </summary>
-            <article class="entry-patient-data">
-              <p id="patient-fullname">Nome completo: Luiz Otávio Moreira</p>
-              <p id="patient-birthdate">Data de nascimento: 26/15/1988</p>
-              <p id="patient-gender">Genero: Masculino</p>
-              <p id="patient-avc-date">Data do AVC: 01/07/2025</p>
-              <p id="patient-lesion-location">Local da lesão:</p>
-              <p id="patient-reference-unit">
-                Unidade de referência: São Hospital Pinheiros
-              </p>
-            </article>
-            <article class="entry-patient-quiz"></article>
-          </details>
-        </div>
-      </section>
+        <h1>Sumário de resultados</h1>
+        <hr style="color: rgba(0, 0, 0, 0.18)" />
+        <section id="data" class="data-list">
+            <div class="entry">
+                <details>
+                    <summary>
+                        <section class="entry-patient-name">
+                            <p>Luiz Otávio Moreira</p>
+                        </section>
+                        <section class="entry-patient-subtitle">
+                            Unidade: São Hospital Pinheiros | Data do teste: 23/05/2025
+                        </section>
+                    </summary>
+                    <article class="entry-patient-data">
+                        <p><strong>Nome completo:</strong> Luiz Otávio Moreira</p>
+                        <p><strong>Data de nascimento:</strong> 26/05/1988</p>
+                        <p><strong>Gênero:</strong> Masculino</p>
+                        <p><strong>Data do AVC:</strong> 01/07/2025</p>
+                        <p><strong>Local da lesão:</strong> Hemisfério esquerdo</p>
+                        <p><strong>Unidade de referência:</strong> São Hospital Pinheiros</p>
+                    </article>
+                    <article class="entry-patient-quiz"></article>
+                </details>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer"></footer>
-    <script src="/js/layout.js"></script>
-  </body>
+    <footer role="contentinfo" aria-label="site footer"
+        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
+        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+        <div style="margin-top: 0.25rem"></div>
+        <script>
+            document
+                .getElementById("footer-date")
+                ?.append(new Date().toLocaleDateString());
+        </script>
+    </footer>
+    <script src="js/patientView.js"></script>
+</body>
+
 </html>

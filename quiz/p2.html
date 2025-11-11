@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RADAVE - Etapa II</title>
     <link rel="stylesheet" href="../css/styles.css" />
-  </head>
+</head>
 
-  <body>
-    <header
-      role="banner"
-      aria-label="RADAVE header"
-      style="margin-bottom: 1rem"
-      justify-content="space-between"
-    >
-      <div
-        class="big-div"
-        style="display: flex; justify-content: space-between"
-      >
-        <div style="display: flex; align-items: center; gap: 1rem">
-          <div
-            style="
+<body>
+    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+        <div class="big-div" style="display: flex; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div style="
               width: 48px;
               height: 48px;
               background: var(--primary);
@@ -30,217 +22,227 @@
               justify-content: center;
               color: #fff;
               font-weight: 700;
-            "
-          >
-            R
-          </div>
-          <div>
-            <div style="font-weight: 700; color: var(--accent-strong)">
-              RADAVE
+            ">
+                    R
+                </div>
+                <div>
+                    <div style="font-weight: 700; color: var(--accent-strong)">
+                        RADAVE
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted)">
+                        Rastreamento para disfagia
+                    </div>
+                </div>
             </div>
-            <div style="font-size: 0.85rem; color: var(--text-muted)">
-              Rastreamento para disfagia
-            </div>
-          </div>
+            <a href="../index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+                <img width="20px" src="../assets/home.png" alt="" />
+            </a>
+
+            <script>
+                const homeButton = document.querySelector('.home-button');
+                homeButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.location.href = "../index.html";
+
+                    sessionStorage.clear();
+                });
+            </script>
         </div>
-        <a
-          href="/index.html"
-          class="home-button"
-          style="display: flex; align-items: center; margin: 10px"
-        >
-          <img width="20px" src="/assets/home.png" alt="" />
-        </a>
-
-        <script>
-          homeButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.location.href = "/index.html";
-
-            sessionStorage.clear();
-          });
-        </script>
-      </div>
     </header>
 
     <main id="main-container">
-      <div id="quiz-container">
-        <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
-        <form id="quiz-form">
-          <div id="user-summary">
-            <h2>Informações do Paciente</h2>
-            <p>
-              <strong>Nome:</strong>
-              <span id="summary-name"></span>
-            </p>
-            <p>
-              <strong>Idade:</strong>
-              <span id="summary-age"></span>
-            </p>
-            <p>
-              <strong>Data do AVC:</strong>
-              <span id="summary-date-avc"></span>
-            </p>
-            <p>
-              <strong>Gênero:</strong>
-              <span id="summary-gender"></span>
-            </p>
-          </div>
-          <hr />
+        <div id="quiz-container">
+            <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
+            <form id="quiz-form">
+                <div id="user-summary">
+                    <h2>Informações do Paciente</h2>
+                    <p>
+                        <strong>Nome:</strong>
+                        <span id="summary-name"></span>
+                    </p>
+                    <p>
+                        <strong>Idade:</strong>
+                        <span id="summary-age"></span>
+                    </p>
+                    <p>
+                        <strong>Data do AVC:</strong>
+                        <span id="summary-date-avc"></span>
+                    </p>
+                    <p>
+                        <strong>Gênero:</strong>
+                        <span id="summary-gender"></span>
+                    </p>
+                </div>
+                <hr />
 
-          <!-- perguntas -->
-          <h2>Etapa II - SINAIS E SINTOMAS</h2>
-          <div id="step-9" class="step">
-            <h1>
-              9. Apresenta dificuldade de engolir o volume colocado na boca?
-            </h1>
-            <p>
-              <strong>Instrução Enfermaria:</strong> Observe a deglutição do
-              alimento (elevação laringea)
-            </p>
-            <p>
-              <strong>Possíveis alterações:</strong> Demora muito para engolir,
-              não engole, necessita de orientações verbais constantes para a
-              deglutição.
-            </p>
-            <label>
-              <input type="radio" name="q9" value="1" />
-              Sim
-            </label>
-            <label>
-              <input type="radio" name="q9" value="0" />
-              Não
-            </label>
-            <label>
-              <input type="radio" name="q9" value="-1" /> Não se aplica
-            </label>
-          </div>
-          <div id="step-10" class="step">
-            <h1>
-              10. Apresenta escape de alguma consistência alimentar para fora da
-              cavidade oral?
-            </h1>
-            <p><strong>Instrução Enfermaria:</strong> Observe a região oral</p>
-            <p>
-              <strong>Possíveis alterações:</strong> Saida do alimento para fora
-              da boca.
-            </p>
-            <label>
-              <input type="radio" name="q10" value="1" />
-              Sim
-            </label>
-            <label>
-              <input type="radio" name="q10" value="0" />
-              Não
-            </label>
-            <label>
-              <input type="radio" name="q10" value="-1" /> Não se aplica
-            </label>
-          </div>
-          <div id="step-11" class="step">
-            <h1>11. Engoliu mais de 3 vezes a porção colocada na boca?</h1>
-            <p>
-              <strong>Instrução Enfermaria:</strong> Observe a elevação de
-              laringe.
-            </p>
-            <p><strong>Possíveis alterações:</strong> Engole mais de 3 vezes</p>
-            <label>
-              <input type="radio" name="q11" value="1" />
-              Sim
-            </label>
-            <label>
-              <input type="radio" name="q11" value="0" />
-              Não
-            </label>
-            <label>
-              <input type="radio" name="q11" value="-1" /> Não se aplica
-            </label>
-          </div>
-          <div id="step-12" class="step">
-            <h1>
-              12. Apresenta pigarros, tosses e/ou engasgos durante a refeição?
-            </h1>
-            <p><strong>Instrução Enfermaria:</strong> Observe os sinais</p>
-            <p>
-              <strong>Possíveis alterações:</strong> Tosses pigarros e/ou
-              engasgos durante a refeição
-            </p>
-            <label>
-              <input type="radio" name="q12" value="1" />
-              Sim
-            </label>
-            <label>
-              <input type="radio" name="q12" value="0" />
-              Não
-            </label>
-            <label>
-              <input type="radio" name="q12" value="-1" /> Não se aplica
-            </label>
-          </div>
-          <div id="step-13" class="step">
-            <h1>
-              13. Apresenta resíduo de alguma consistência alimentar na cavidade
-              oral depois que engole?
-            </h1>
-            <p>
-              <strong>Instrução Enfermaria:</strong> Depois que o paciente
-              engolir, observe sua cavidade oral
-            </p>
-            <p>
-              <strong>Possíveis alterações:</strong> Acúmulo de alimento dentro
-              da boca
-            </p>
-            <label>
-              <input type="radio" name="q13" value="1" />
-              Sim
-            </label>
-            <label>
-              <input type="radio" name="q13" value="0" />
-              Não
-            </label>
-            <label>
-              <input type="radio" name="q13" value="-1" /> Não se aplica
-            </label>
-          </div>
-          <div class="button-box">
-            <button type="submit" id="submit-button">Finalizar</button>
-          </div>
-        </form>
-      </div>
+                <!-- perguntas -->
+                <h2>Etapa II - SINAIS E SINTOMAS</h2>
+                <div id="step-9" class="step">
+                    <h1>
+                        9. Apresenta dificuldade de engolir o volume colocado na boca?
+                    </h1>
+                    <p>
+                        <strong>Instrução Enfermaria:</strong> Observe a deglutição do
+                        alimento (elevação laringea)
+                    </p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Demora muito para engolir,
+                        não engole, necessita de orientações verbais constantes para a
+                        deglutição.
+                    </p>
+                    <label>
+                        <input type="radio" name="q9" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="-1" /> Não se aplica
+                    </label>
+                </div>
+                <div id="step-10" class="step">
+                    <h1>
+                        10. Apresenta escape de alguma consistência alimentar para fora da
+                        cavidade oral?
+                    </h1>
+                    <p><strong>Instrução Enfermaria:</strong> Observe a região oral</p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Saida do alimento para fora
+                        da boca.
+                    </p>
+                    <label>
+                        <input type="radio" name="q10" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="-1" /> Não se aplica
+                    </label>
+                </div>
+                <div id="step-11" class="step">
+                    <h1>11. Engoliu mais de 3 vezes a porção colocada na boca?</h1>
+                    <p>
+                        <strong>Instrução Enfermaria:</strong> Observe a elevação de
+                        laringe.
+                    </p>
+                    <p><strong>Possíveis alterações:</strong> Engole mais de 3 vezes</p>
+                    <label>
+                        <input type="radio" name="q11" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q11" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q11" value="-1" /> Não se aplica
+                    </label>
+                </div>
+                <div id="step-12" class="step">
+                    <h1>
+                        12. Apresenta pigarros, tosses e/ou engasgos durante a refeição?
+                    </h1>
+                    <p><strong>Instrução Enfermaria:</strong> Observe os sinais</p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Tosses pigarros e/ou
+                        engasgos durante a refeição
+                    </p>
+                    <label>
+                        <input type="radio" name="q12" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q12" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q12" value="-1" /> Não se aplica
+                    </label>
+                </div>
+                <div id="step-13" class="step">
+                    <h1>
+                        13. Apresenta resíduo de alguma consistência alimentar na cavidade
+                        oral depois que engole?
+                    </h1>
+                    <p>
+                        <strong>Instrução Enfermaria:</strong> Depois que o paciente
+                        engolir, observe sua cavidade oral
+                    </p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Acúmulo de alimento dentro
+                        da boca
+                    </p>
+                    <label>
+                        <input type="radio" name="q13" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q13" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q13" value="-1" /> Não se aplica
+                    </label>
+                </div>
+                <div class="button-box">
+                    <button type="submit" id="submit-button">Finalizar</button>
+                </div>
+            </form>
+        </div>
     </main>
 
-    <footer
-      role="contentinfo"
-      aria-label="site footer"
-      style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
-    >
-      <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
-      <div style="margin-top: 0.25rem"></div>
-      <script>
-        document
-          .getElementById("footer-date")
-          ?.append(new Date().toLocaleDateString());
-      </script>
+    <footer role="contentinfo" aria-label="site footer"
+        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
+        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+        <div style="margin-top: 0.25rem"></div>
+        <script>
+            document
+                .getElementById("footer-date")
+                ?.append(new Date().toLocaleDateString());
+        </script>
     </footer>
 
-    <script src="/js/quizCommon.js"></script>
+    <script src="../js/quizCommon.js"></script>
     <script>
-      document
-        .getElementById("quiz-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+        document
+            .getElementById("quiz-form")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
 
-          const p_q9 = document.getElementById("step-9").value;
-          const p_q10 = document.getElementById("step-10").value;
-          const p_q11 = document.getElementById("step-11").value;
-          const p_q12 = document.getElementById("step-12").value;
-          const p_q13 = document.getElementById("step-13").value;
+                // Salvar respostas da etapa 2
+                saveAnswers(["q9", "q10", "q11", "q12", "q13"]);
 
-          sessionStorage.setItem("q9", p_q9 || "");
-          sessionStorage.setItem("q10", p_q10 || "");
-          sessionStorage.setItem("q11", p_q11 || "");
-          sessionStorage.setItem("q12", p_q12 || "");
-          sessionStorage.setItem("q13", p_q13 || "");
-        });
+                // Calcular risco total
+                let totalRisk = 0;
+
+                // Obter todas as respostas das duas etapas
+                for (let i = 1; i <= 13; i++) {
+                    const answer = parseInt(sessionStorage.getItem(`q${i}`) || '0');
+                    // Contar respostas positivas (valor = 1) como indicadores de risco
+                    if (answer === 1) {
+                        totalRisk++;
+                    }
+                }
+
+                // Determinar qual alerta mostrar com base no risco total
+                let alertType;
+                if (totalRisk >= 2) {
+                    // Alto risco - mostrar alerta de perigo
+                    alertType = 'danger';
+                } else {
+                    // Sem risco detectado
+                    alertType = 'ok';
+                }
+
+                // Redirecionar para a página de alerta unificado
+                window.location.href = `../alert.html?type=${alertType}`;
+            });
     </script>
-  </body>
+</body>
+
 </html>

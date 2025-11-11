@@ -1,13 +1,7 @@
-<header
-  role="banner"
-  aria-label="RADAVE header"
-  style="margin-bottom: 1rem"
-  justify-content="space-between"
->
-  <div class="big-div" style="display: flex; justify-content: space-between">
-    <div style="display: flex; align-items: center; gap: 1rem">
-      <div
-        style="
+<header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+    <div class="big-div" style="display: flex; justify-content: space-between">
+        <div style="display: flex; align-items: center; gap: 1rem">
+            <div style="
           width: 48px;
           height: 48px;
           background: var(--primary);
@@ -17,32 +11,28 @@
           justify-content: center;
           color: #fff;
           font-weight: 700;
-        "
-      >
-        R
-      </div>
-      <div>
-        <div style="font-weight: 700; color: var(--accent-strong)">RADAVE</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted)">
-          Rastreamento para disfagia
+        ">
+                R
+            </div>
+            <div>
+                <div style="font-weight: 700; color: var(--accent-strong)">RADAVE</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted)">
+                    Rastreamento para disfagia
+                </div>
+            </div>
         </div>
-      </div>
+        <a href="index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+            <img width="20px" src="assets/home.png" alt="" />
+        </a>
+
+        <script>
+            const homeButton = document.querySelector('.home-button');
+            homeButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.location.href = "index.html";
+
+                sessionStorage.clear();
+            });
+        </script>
     </div>
-    <a
-      href="/index.html"
-      class="home-button"
-      style="display: flex; align-items: center; margin: 10px"
-    >
-      <img width="20px" src="/assets/home.png" alt="" />
-    </a>
-
-    <script>
-      homeButton.addEventListener("click", function (e) {
-        e.preventDefault();
-        window.location.href = "/index.html";
-
-        sessionStorage.clear();
-      });
-    </script>
-  </div>
 </header>

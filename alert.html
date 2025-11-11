@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Alerta</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+        <div class="big-div" style="display: flex; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div
+                    style="width: 48px; height: 48px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                    R</div>
+                <div>
+                    <div style="font-weight: 700; color: var(--accent-strong)">RADAVE</div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted)">Rastreamento para disfagia</div>
+                </div>
+            </div>
+            <a href="/index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+                <img width="20px" src="/assets/home.png" alt="" />
+            </a>
+
+            <script>
+                const homeButton = document.querySelector('.home-button');
+                homeButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.location.href = "/index.html";
+                    sessionStorage.clear();
+                });
+            </script>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <div id="alert-container">
+            <!-- Content will be dynamically loaded based on alert type -->
+        </div>
+    </main>
+
+    <footer role="contentinfo" aria-label="site footer"
+        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
+        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+        <div style="margin-top: 0.25rem"></div>
+        <script>
+            document.getElementById("footer-date")?.append(new Date().toLocaleDateString());
+        </script>
+    </footer>
+
+    <script src="/js/datasave.js"></script>
+    <script>
+        // Get alert type from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const alertType = urlParams.get('type') || 'ok';
+
+        const alertContainer = document.getElementById('alert-container');
+
+        // Configure alert based on type
+        switch (alertType) {
+            case 'danger':
+                alertContainer.className = 'alert-danger';
+                alertContainer.innerHTML = `
+            <h1>AVISO IMPORTANTE!</h1>
+            <div id="message">
+              <h3 style="color: var(--danger)">
+                PACIENTE EM RISCO DE DISFAGIA E ASPIRAÇÃO LARINGOTRAQUEAL!
+              </h3>
+              <p style="font-size: 0.95rem">
+                NECESSÁRIA A AVALIAÇÃO DO FONOAUDIÓLOGO ESPECIALISTA EM DISFAGIA
+                PARA CONFIRMAR O DIAGNÓSTICO.
+              </p>
+            </div>
+            <button id="save-data-btn">Salvar os dados</button>
+            <div id="loading">Gravando dados, aguarde...</div>
+          `;
+                break;
+
+            case 'next':
+                alertContainer.innerHTML = `
+            <h1>AVISO IMPORTANTE!</h1>
+            <br>
+            <br>
+            <br>
+            <div class="liberado">
+              <h2 style="margin: 0;">PACIENTE LIBERADO PARA A ETAPA II</h2>
+            </div>
+            <br>
+            <br>
+            <p>(Acompanhe a refeição iniciando  com a  consistência pastosa - nível 4 IDDSI e evolua conforme desempenho do paciente na etapa II)</p>
+            <br>
+            <br>
+            <button id="continue-button">Continuar para a Etapa II</button>
+          `;
+
+                // Add event listener for continue button
+                document.getElementById('continue-button').addEventListener('click', () => {
+                    // Usando sessionStorage para indicar que a etapa 1 foi completada e deve começar na pergunta 9
+                    sessionStorage.setItem('step', '9');
+                    // Redireciona para a página de quiz (relative path)
+                    window.location.href = 'quiz/p2.html';
+                });
+                break;
+
+            case 'ok':
+            default:
+                alertContainer.className = 'alert-ok';
+                alertContainer.innerHTML = `
+            <h1>AVISO</h1>
+            <div id="message">
+              <h2 class="final">QUESTIONÁRIO FINALIZADO</h2>
+              <strong class="paciente">PACIENTE SEM RISCO NO MOMENTO, MANTENHA A OBSERVAÇÃO</strong>
+              <p>Obrigado por responder ao questionário.</p>
+              <p>Clique no botão abaixo para salvar os dados do paciente</p>
+            </div>
+            <button id="save-data-btn">Salvar os dados</button>
+            <div id="loading">Gravando dados, aguarde...</div>
+          `;
+                break;
+        }
+    </script>
+</body>
+
+</html>

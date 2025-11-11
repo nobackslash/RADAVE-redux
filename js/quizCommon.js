@@ -26,7 +26,10 @@ function saveAnswers(pageQuestions) {
   pageQuestions.forEach(q => {
     const selected = document.querySelector(`input[name="${q}"]:checked`);
     if (selected) {
-      lastPatient.questions[q] = parseInt(selected.value);
+        // Também salva no sessionStorage para cálculo de risco
+        const value = selected.value;
+        lastPatient.questions[q] = parseInt(value);
+        sessionStorage.setItem(q, value);
     }
   });
   

@@ -2,13 +2,13 @@ import * as XLSX from "https://cdn.sheetjs.com/xlsx-latest/package/xlsx.mjs";
 
 // Exportar dados coletados em sessionStorage para XLSX
 document.getElementById("save-data-btn").addEventListener("click", () => {
-  // Coletar dados do sessionStorage
-  const patientName = sessionStorage.getItem("name");
-  const patientAge = sessionStorage.getItem("age");
-  const patientAvcDate = sessionStorage.getItem("dateAvc");
-  const patientGender = sessionStorage.getItem("gender");
-  const patientWoundLocal = sessionStorage.getItem("locallesao");
-  const unit = sessionStorage.getItem("unit");
+  // Coletar dados do sessionStorage (usando as chaves corretas, elas estavam apontando para as chaves erradas)
+  const patientName = sessionStorage.getItem("p_name");
+  const patientAge = sessionStorage.getItem("p_age");
+  const patientAvcDate = sessionStorage.getItem("p_dtavc");
+  const patientGender = sessionStorage.getItem("p_gender");
+  const patientWoundLocal = sessionStorage.getItem("p_injure");
+  const unit = sessionStorage.getItem("p_place");
 
   // Coletar respostas do questionário (perguntas de 1 a 13)
   let quizAnswers = [];
