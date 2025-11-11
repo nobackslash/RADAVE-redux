@@ -228,8 +228,18 @@
         .getElementById("quiz-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-          saveAnswers(["q9", "q10", "q11", "q12", "q13"]);
-          window.location.href = "/visualizacao.html";
+
+          const p_q9 = document.getElementById("step-9").value;
+          const p_q10 = document.getElementById("step-10").value;
+          const p_q11 = document.getElementById("step-11").value;
+          const p_q12 = document.getElementById("step-12").value;
+          const p_q13 = document.getElementById("step-13").value;
+
+          sessionStorage.setItem("q9", p_q9 || "");
+          sessionStorage.setItem("q10", p_q10 || "");
+          sessionStorage.setItem("q11", p_q11 || "");
+          sessionStorage.setItem("q12", p_q12 || "");
+          sessionStorage.setItem("q13", p_q13 || "");
         });
     </script>
   </body>

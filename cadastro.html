@@ -152,7 +152,6 @@
           ?.append(new Date().toLocaleDateString());
       </script>
     </footer>
-    <script src="js/patientForm.js"></script>
     <script>
       document
         .getElementById("patient-form")
@@ -160,6 +159,33 @@
           e.preventDefault();
 
           window.location.href = "quiz/p1.html";
+
+          const p_name = document.getElementById("p_name").value.trim();
+          const p_birth = document.getElementById("p_birth").value;
+          const p_dtavc = document.getElementById("p_dtavc").value;
+          const p_injure = document.getElementById("p_injure").value;
+          const p_gender = document.getElementById("p_gender").value;
+          const p_place = document.getElementById("p_place").value;
+
+          // compute age from birthdate
+          let age = null;
+          if (p_birth) {
+            const b = new Date(p_birth);
+            const today = new Date();
+            age = today.getFullYear() - b.getFullYear();
+            const m = today.getMonth() - b.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < b.getDate())) {
+              age--;
+            }
+          }
+
+          // save all the session data
+          sessionStorage.setItem("p_name", p_name || "");
+          if (age !== null) sessionStorage.setItem("p_age", String(age));
+          sessionStorage.setItem("p_dtavc", p_dtavc || "");
+          sessionStorage.setItem("p_injure", p_injure || "");
+          sessionStorage.setItem("p_gender", p_gender || "");
+          sessionStorage.setItem("p_place", p_place || "");
         });
     </script>
   </body>

@@ -44,17 +44,17 @@
           </div>
         </div>
         <a
-          href="/index.html"
+          href="../index.html"
           class="home-button"
           style="display: flex; align-items: center; margin: 10px"
         >
-          <img width="20px" src="/assets/home.png" alt="" />
+          <img width="20px" src="../assets/home.png" alt="" />
         </a>
 
         <script>
           homeButton.addEventListener("click", function (e) {
             e.preventDefault();
-            window.location.href = "/index.html";
+            window.location.href = "../index.html";
 
             sessionStorage.clear();
           });
@@ -282,7 +282,7 @@
             </label>
           </div>
           <div class="button-box">
-            <button type="submit" id="submit-button">Analisar</button>
+            <button type="submit" id="submit-button">Analisar</bq2utton>
           </div>
         </form>
       </div>
@@ -328,6 +328,25 @@
         summaryAge.innerHTML = p_age;
         summaryAvc.innerHTML = p_dtavc;
         summaryGender.innerHTML = p_gender;
+
+        // now quiz questions
+        const p_q1 = document.getElementById("step-1").value;
+        const p_q2 = document.getElementById("step-2").value;
+        const p_q3 = document.getElementById("step-3").value;
+        const p_q4 = document.getElementById("step-4").value;
+        const p_q5 = document.getElementById("step-5").value;
+        const p_q6 = document.getElementById("step-6").value;
+        const p_q7 = document.getElementById("step-7").value;
+        const p_q8 = document.getElementById("step-8").value;
+
+        sessionStorage.setItem("q1", p_q1 || "");
+        sessionStorage.setItem("q2", p_q2 || "");
+        sessionStorage.setItem("q3", p_q3 || "");
+        sessionStorage.setItem("q4", p_q4 || "");
+        sessionStorage.setItem("q5", p_q5 || "");
+        sessionStorage.setItem("q6", p_q6 || "");
+        sessionStorage.setItem("q7", p_q7 || "");
+        sessionStorage.setItem("q8", p_q8 || "");
       }
 
       document
