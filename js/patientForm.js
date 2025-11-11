@@ -64,6 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("patientData", JSON.stringify(allData));
 
     // proceed to quiz 1
-    window.location.href = "/quiz/p1.html";
+    window.location.href = "../quiz/p1.html";
   });
 });
