@@ -52,13 +52,13 @@
 
     <script src="/js/datasave.js"></script>
     <script>
-        // Get alert type from URL parameter
+        // Obter o tipo de alerta da URL
         const urlParams = new URLSearchParams(window.location.search);
         const alertType = urlParams.get('type') || 'ok';
 
         const alertContainer = document.getElementById('alert-container');
 
-        // Configure alert based on type
+        // Configurar alerta baseado no tipo
         switch (alertType) {
             case 'danger':
                 alertContainer.className = 'alert-danger';
@@ -95,7 +95,7 @@
             <button id="continue-button">Continuar para a Etapa II</button>
           `;
 
-                // Add event listener for continue button
+                // Adicionar evento para responder no click
                 document.getElementById('continue-button').addEventListener('click', () => {
                     // Usando sessionStorage para indicar que a etapa 1 foi completada e deve começar na pergunta 9
                     sessionStorage.setItem('step', '9');

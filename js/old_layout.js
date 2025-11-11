@@ -1,5 +1,5 @@
 async function loadLayout() {
-  // time saving
+  // poupando tempo
   try {
     const header = await fetch("/../header.html").then((res) => res.text());
     const footer = await fetch("/../footer.html").then((res) => res.text());

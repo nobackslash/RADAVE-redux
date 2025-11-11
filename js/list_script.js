@@ -1,14 +1,14 @@
 async function getModelData() {
   try {
-    // get the json, make it an instance
+    // pega o json, transforma em um array
     const response = await fetch("debug_data.json");
     const data = await response.json;
 
-    // now create the instance of the list html element
+    // agora crie a instancia do html
     const container = document.getElementById("data");
     container.innerHTML = "";
 
-    // now create a separated element for each entry on the bank
+    // agora para cada item do json, crie um elemento html
     data.forEach((item) => {
       div = document.createElement("div");
       div.className = "entry";

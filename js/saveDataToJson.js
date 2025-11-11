@@ -18,7 +18,7 @@ const q11 = sessionStorage.getItem("q11") || "N/A";
 const q12 = sessionStorage.getItem("q12") || "N/A";
 const q13 = sessionStorage.getItem("q13") || "N/A";
 
-// now write debug_data.json file and add this entry
+// agora crie o arquivo debug_data.json e adicione esta entrada
 const patientData = {
   name: p_name,
   birthdate: p_birth,
