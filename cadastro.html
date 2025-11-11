@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Registro de Paciente</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header
+      role="banner"
+      aria-label="RADAVE header"
+      style="margin-bottom: 1rem"
+      justify-content="space-between"
+    >
+      <div
+        class="big-div"
+        style="display: flex; justify-content: space-between"
+      >
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: var(--primary);
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-weight: 700;
+            "
+          >
+            R
+          </div>
+          <div>
+            <div style="font-weight: 700; color: var(--accent-strong)">
+              RADAVE
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted)">
+              Rastreamento para disfagia
+            </div>
+          </div>
+        </div>
+        <a
+          href="/index.html"
+          class="home-button"
+          style="display: flex; align-items: center; margin: 10px"
+        >
+          <img width="20px" src="/assets/home.png" alt="" />
+        </a>
+
+        <script>
+          homeButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "/index.html";
+
+            sessionStorage.clear();
+          });
+        </script>
+      </div>
+    </header>
+
+    <main id="main-container">
+      <h1>Registro de Paciente</h1>
+      <form id="patient-form">
+        <div class="form-group">
+          <label for="p_name">Nome do Paciente:</label>
+          <input
+            type="text"
+            id="p_name"
+            name="p_name"
+            maxlength="50"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="p_birth">Data de Nascimento:</label>
+          <input
+            type="date"
+            id="p_birth"
+            name="p_birth"
+            min="1900-01-01"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="p_dtavc">Data do AVC:</label>
+          <input
+            type="date"
+            id="p_dtavc"
+            name="p_dtavc"
+            min="2000-01-01"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="p_injure">Local da lesão:</label>
+          <select id="p_injure" name="p_injure" required>
+            <option value="">Selecione</option>
+            <option value="Hemisfério direito">Hemisfério direito</option>
+            <option value="Hemisfério esquerdo">Hemisfério esquerdo</option>
+            <option value="Bilateral">Bilateral</option>
+            <option value="Tronco cerebral">Tronco cerebral</option>
+            <option value="Sem especificações">Sem especificações</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="p_gender">Sexo:</label>
+          <select id="p_gender" name="p_gender" required>
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="p_place">Unidade de Aplicação:</label>
+          <select id="p_place" name="p_place" required>
+            <option value="">Selecione</option>
+            <option value="Centro de Reabilitação">
+              Centro de Reabilitação
+            </option>
+            <option value="Enfermaria">Enfermaria</option>
+            <option value="UBS">UBS</option>
+            <option value="Pronto Socorro">Pronto Socorro</option>
+            <option value="Unidade de AVC">Unidade de AVC</option>
+            <option value="UTI">UTI</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-button">Iniciar Avaliação</button>
+      </form>
+    </main>
+
+    <footer
+      role="contentinfo"
+      aria-label="site footer"
+      style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
+    >
+      <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+      <div style="margin-top: 0.25rem"></div>
+      <script>
+        document
+          .getElementById("footer-date")
+          ?.append(new Date().toLocaleDateString());
+      </script>
+    </footer>
+    <script src="js/patientForm.js"></script>
+  </body>
+</html>

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         age--;
       }
     }
-    
+
     // save all the session data
     sessionStorage.setItem("p_name", p_name || "");
     if (age !== null) sessionStorage.setItem("p_age", String(age));
@@ -40,18 +40,30 @@ document.addEventListener("DOMContentLoaded", function () {
       local_wound: p_injure || "",
       unit: p_place || "",
       questions: {
-        q1: 0, q2: 0, q3: 0, q4: 0, q5: 0,
-        q6: 0, q7: 0, q8: 0, q9: 0, q10: 0,
-        q11: 0, q12: 0, q13: 0, q14: 0, q15: 0
-      }
+        q1: 0,
+        q2: 0,
+        q3: 0,
+        q4: 0,
+        q5: 0,
+        q6: 0,
+        q7: 0,
+        q8: 0,
+        q9: 0,
+        q10: 0,
+        q11: 0,
+        q12: 0,
+        q13: 0,
+        q14: 0,
+        q15: 0,
+      },
     };
 
     // get existing data or initialize empty array
-    let allData = JSON.parse(localStorage.getItem('patientData') || '[]');
+    let allData = JSON.parse(localStorage.getItem("patientData") || "[]");
     allData.push(patientData);
-    localStorage.setItem('patientData', JSON.stringify(allData));
+    localStorage.setItem("patientData", JSON.stringify(allData));
 
     // proceed to quiz 1
-    window.location.href = "quiz/p1.html";
+    window.location.href = "/quiz/p1.html";
   });
 });

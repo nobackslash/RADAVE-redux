@@ -4,11 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RADAVE - Etapa I</title>
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
-    <header id="header"></header>
+    <header
+      role="banner"
+      aria-label="RADAVE header"
+      style="margin-bottom: 1rem"
+      justify-content="space-between"
+    >
+      <div
+        class="big-div"
+        style="display: flex; justify-content: space-between"
+      >
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <div
+            style="
+              width: 48px;
+              height: 48px;
+              background: var(--primary);
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-weight: 700;
+            "
+          >
+            R
+          </div>
+          <div>
+            <div style="font-weight: 700; color: var(--accent-strong)">
+              RADAVE
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted)">
+              Rastreamento para disfagia
+            </div>
+          </div>
+        </div>
+        <a
+          href="/index.html"
+          class="home-button"
+          style="display: flex; align-items: center; margin: 10px"
+        >
+          <img width="20px" src="/assets/home.png" alt="" />
+        </a>
+
+        <script>
+          homeButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "/index.html";
+
+            sessionStorage.clear();
+          });
+        </script>
+      </div>
+    </header>
 
     <main id="main-container">
       <div id="quiz-container">
@@ -236,9 +288,20 @@
       </div>
     </main>
 
-    <footer id="footer"></footer>
-    <script src="../../js/layout.js"></script>
-    <script src="../../js/quizCommon.js"></script>
+    <footer
+      role="contentinfo"
+      aria-label="site footer"
+      style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
+    >
+      <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
+      <div style="margin-top: 0.25rem"></div>
+      <script>
+        document
+          .getElementById("footer-date")
+          ?.append(new Date().toLocaleDateString());
+      </script>
+    </footer>
+    <script src="../js/quizCommon.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
@@ -267,11 +330,13 @@
         summaryGender.innerHTML = p_gender;
       }
 
-      document.getElementById("quiz-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        saveAnswers(['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']);
-        window.location.href = "p2.html";
-      });
+      document
+        .getElementById("quiz-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          saveAnswers(["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]);
+          window.location.href = "p2.html";
+        });
     </script>
   </body>
 </html>
