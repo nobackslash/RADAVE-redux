@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>RADAVE - Etapa II</title>
-        <link rel="stylesheet" href="../css/styles.css" />
-    </head>
 
-    <body>
-        <header
-            role="banner"
-            aria-label="RADAVE header"
-            style="margin-bottom: 1rem"
-            justify-content="space-between"
-        >
-            <div
-                class="big-div"
-                style="display: flex; justify-content: space-between"
-            >
-                <div style="display: flex; align-items: center; gap: 1rem">
-                    <div
-                        style="
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADAVE - Etapa II</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
+        <div class="big-div" style="display: flex; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div style="
                             width: 48px;
                             height: 48px;
                             background: var(--primary);
@@ -30,330 +22,323 @@
                             justify-content: center;
                             color: #fff;
                             font-weight: 700;
-                        "
-                    >
-                        R
-                    </div>
-                    <div>
-                        <div
-                            style="
+                        ">
+                    R
+                </div>
+                <div>
+                    <div style="
                                 font-weight: 700;
                                 color: var(--accent-strong);
-                            "
-                        >
-                            RADAVE
-                        </div>
-                        <div
-                            style="font-size: 0.85rem; color: var(--text-muted)"
-                        >
-                            Rastreamento para disfagia
-                        </div>
+                            ">
+                        RADAVE
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted)">
+                        Rastreamento para disfagia
                     </div>
                 </div>
-                <a
-                    href="../index.html"
-                    class="home-button"
-                    style="display: flex; align-items: center; margin: 10px"
-                >
-                    <img width="20px" src="../assets/home.png" alt="" />
-                </a>
-
-                <script>
-                    const homeButton = document.querySelector(".home-button");
-                    homeButton.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        window.location.href = "../index.html";
-
-                        sessionStorage.clear();
-                    });
-                </script>
             </div>
-        </header>
+            <a href="../index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
+                <img width="20px" src="../assets/home.png" alt="" />
+            </a>
 
-        <main id="main-container">
-            <div id="quiz-container">
-                <h1>
-                    Rastreamento para a disfagia no acidente vascular encefálico
-                </h1>
-                <form id="quiz-form">
-                    <div id="user-summary">
-                        <h2>Informações do Paciente</h2>
-                        <p>
-                            <strong>Nome:</strong>
-                            <span id="summary-name"></span>
-                        </p>
-                        <p>
-                            <strong>Idade:</strong>
-                            <span id="summary-age"></span>
-                        </p>
-                        <p>
-                            <strong>Data do AVC:</strong>
-                            <span id="summary-date-avc"></span>
-                        </p>
-                        <p>
-                            <strong>Gênero:</strong>
-                            <span id="summary-gender"></span>
-                        </p>
-                    </div>
-                    <hr />
-
-                    <!-- perguntas -->
-                    <h2>Etapa II - SINAIS E SINTOMAS</h2>
-                    <div id="step-9" class="step">
-                        <h1>
-                            9. Apresenta dificuldade de engolir o volume
-                            colocado na boca?
-                        </h1>
-                        <p>
-                            <strong>Instrução:</strong> Observe a deglutição do
-                            alimento (elevação laringea)
-                        </p>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Demora muito
-                            para engolir, não engole, necessita de orientações
-                            verbais constantes para a deglutição.
-                        </p>
-                        <label>
-                            <input type="radio" name="q9" value="1" />
-                            Sim
-                        </label>
-                        <label>
-                            <input type="radio" name="q9" value="0" />
-                            Não
-                        </label>
-                        <label>
-                            <input type="radio" name="q9" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-10" class="step">
-                        <h1>
-                            10. Apresenta escape de alguma consistência
-                            alimentar para fora da cavidade oral?
-                        </h1>
-                        <p><strong>Instrução:</strong> Observe a região oral</p>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Saida do
-                            alimento para fora da boca.
-                        </p>
-                        <label>
-                            <input type="radio" name="q10" value="1" />
-                            Sim
-                        </label>
-                        <label>
-                            <input type="radio" name="q10" value="0" />
-                            Não
-                        </label>
-                        <label>
-                            <input type="radio" name="q10" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-11" class="step">
-                        <h1>
-                            11. Engoliu mais de 3 vezes a porção colocada na
-                            boca?
-                        </h1>
-                        <p>
-                            <strong>Instrução:</strong> Observe a elevação de
-                            laringe.
-                        </p>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Engole mais
-                            de 3 vezes
-                        </p>
-                        <label>
-                            <input type="radio" name="q11" value="1" />
-                            Sim
-                        </label>
-                        <label>
-                            <input type="radio" name="q11" value="0" />
-                            Não
-                        </label>
-                        <label>
-                            <input type="radio" name="q11" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-12" class="step">
-                        <h1>
-                            12. Apresenta pigarros, tosses e/ou engasgos durante
-                            a refeição?
-                        </h1>
-                        <p><strong>Instrução:</strong> Observe os sinais</p>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Tosses
-                            pigarros e/ou engasgos durante a refeição
-                        </p>
-                        <label>
-                            <input type="radio" name="q12" value="1" />
-                            Sim
-                        </label>
-                        <label>
-                            <input type="radio" name="q12" value="0" />
-                            Não
-                        </label>
-                        <label>
-                            <input type="radio" name="q12" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div id="step-13" class="step">
-                        <h1>
-                            13. Apresenta resíduo de alguma consistência
-                            alimentar na cavidade oral depois que engole?
-                        </h1>
-                        <p>
-                            <strong>Instrução:</strong> Depois que o paciente
-                            engolir, observe sua cavidade oral
-                        </p>
-                        <p>
-                            <strong>Possíveis alterações:</strong> Acúmulo de
-                            alimento dentro da boca
-                        </p>
-                        <label>
-                            <input type="radio" name="q13" value="1" />
-                            Sim
-                        </label>
-                        <label>
-                            <input type="radio" name="q13" value="0" />
-                            Não
-                        </label>
-                        <label>
-                            <input type="radio" name="q13" value="-1" /> Não se
-                            aplica
-                        </label>
-                    </div>
-                    <div class="button-box">
-                        <button type="button" id="previous-button">
-                            Pergunta Anterior
-                        </button>
-                        <button type="submit" id="submit-button">
-                            Finalizar
-                        </button>
-                        <button type="button" id="next-button">
-                            Próxima Pergunta
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </main>
-
-        <footer
-            role="contentinfo"
-            aria-label="site footer"
-            style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
-        >
-            <div>
-                © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
-            </div>
-            <div style="margin-top: 0.25rem"></div>
             <script>
-                document
-                    .getElementById("footer-date")
-                    ?.append(new Date().toLocaleDateString());
-            </script>
-        </footer>
-
-        <script src="../js/quizCommon.js"></script>
-        <script>
-            // Submit handler (preserve existing behavior): save answers and redirect to unified alert
-            document
-                .getElementById("quiz-form")
-                .addEventListener("submit", function (e) {
+                const homeButton = document.querySelector(".home-button");
+                homeButton.addEventListener("click", function (e) {
                     e.preventDefault();
+                    window.location.href = "../index.html";
 
-                    // Salvar respostas da etapa 2
-                    saveAnswers(["q9", "q10", "q11", "q12", "q13"]);
-
-                    // Calcular risco total (conta respostas positivas = 1)
-                    let totalRisk = 0;
-                    for (let i = 1; i <= 13; i++) {
-                        const answer = parseInt(
-                            sessionStorage.getItem(`q${i}`) || "0"
-                        );
-                        if (answer === 1) totalRisk++;
-                    }
-
-                    let alertType = totalRisk >= 2 ? "danger" : "ok";
-                    window.location.href = `../alert.html?type=${alertType}`;
+                    sessionStorage.clear();
                 });
+            </script>
+        </div>
+    </header>
 
-            // Navigation logic copied/adapted from p1.html so this page behaves step-by-step
+    <main id="main-container">
+        <div id="quiz-container">
+            <h1>
+                Rastreamento para a disfagia no acidente vascular encefálico
+            </h1>
+            <form id="quiz-form">
+                <div id="user-summary">
+                    <h2>Informações do Paciente</h2>
+                    <p>
+                        <strong>Nome:</strong>
+                        <span id="summary-name"></span>
+                    </p>
+                    <p>
+                        <strong>Idade:</strong>
+                        <span id="summary-age"></span>
+                    </p>
+                    <p>
+                        <strong>Data do AVC:</strong>
+                        <span id="summary-date-avc"></span>
+                    </p>
+                    <p>
+                        <strong>Gênero:</strong>
+                        <span id="summary-gender"></span>
+                    </p>
+                </div>
+                <hr />
+
+                <!-- perguntas -->
+                <h2>Etapa II - SINAIS E SINTOMAS</h2>
+                <div id="step-9" class="step">
+                    <h1>
+                        9. Apresenta dificuldade de engolir o volume
+                        colocado na boca?
+                    </h1>
+                    <p>
+                        <strong>Instrução:</strong> Observe a deglutição do
+                        alimento (elevação laringea)
+                    </p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Demora muito
+                        para engolir, não engole, necessita de orientações
+                        verbais constantes para a deglutição.
+                    </p>
+                    <label>
+                        <input type="radio" name="q9" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="-1" /> Não se
+                        aplica
+                    </label>
+                </div>
+                <div id="step-10" class="step">
+                    <h1>
+                        10. Apresenta escape de alguma consistência
+                        alimentar para fora da cavidade oral?
+                    </h1>
+                    <p><strong>Instrução:</strong> Observe a região oral</p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Saida do
+                        alimento para fora da boca.
+                    </p>
+                    <label>
+                        <input type="radio" name="q10" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="-1" /> Não se
+                        aplica
+                    </label>
+                </div>
+                <div id="step-11" class="step">
+                    <h1>
+                        11. Engoliu mais de 3 vezes a porção colocada na
+                        boca?
+                    </h1>
+                    <p>
+                        <strong>Instrução:</strong> Observe a elevação de
+                        laringe.
+                    </p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Engole mais
+                        de 3 vezes
+                    </p>
+                    <label>
+                        <input type="radio" name="q11" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q11" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q11" value="-1" /> Não se
+                        aplica
+                    </label>
+                </div>
+                <div id="step-12" class="step">
+                    <h1>
+                        12. Apresenta pigarros, tosses e/ou engasgos durante
+                        a refeição?
+                    </h1>
+                    <p><strong>Instrução:</strong> Observe os sinais</p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Tosses
+                        pigarros e/ou engasgos durante a refeição
+                    </p>
+                    <label>
+                        <input type="radio" name="q12" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q12" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q12" value="-1" /> Não se
+                        aplica
+                    </label>
+                </div>
+                <div id="step-13" class="step">
+                    <h1>
+                        13. Apresenta resíduo de alguma consistência
+                        alimentar na cavidade oral depois que engole?
+                    </h1>
+                    <p>
+                        <strong>Instrução:</strong> Depois que o paciente
+                        engolir, observe sua cavidade oral
+                    </p>
+                    <p>
+                        <strong>Possíveis alterações:</strong> Acúmulo de
+                        alimento dentro da boca
+                    </p>
+                    <label>
+                        <input type="radio" name="q13" value="1" />
+                        Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="q13" value="0" />
+                        Não
+                    </label>
+                    <label>
+                        <input type="radio" name="q13" value="-1" /> Não se
+                        aplica
+                    </label>
+                </div>
+                <div class="button-box">
+                    <button type="button" id="previous-button">
+                        Pergunta Anterior
+                    </button>
+                    <button type="submit" id="submit-button">
+                        Finalizar
+                    </button>
+                    <button type="button" id="next-button">
+                        Próxima Pergunta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer role="contentinfo" aria-label="site footer"
+        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
+        <div>
+            © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
+        </div>
+        <div style="margin-top: 0.25rem"></div>
+        <script>
             document
-                .getElementById("previous-button")
-                .addEventListener("click", function () {
-                    const currentQtnum = parseInt(
-                        sessionStorage.getItem("qtnum") || "1"
+                .getElementById("footer-date")
+                ?.append(new Date().toLocaleDateString());
+        </script>
+    </footer>
+
+    <script src="../js/quizCommon.js"></script>
+    <script>
+        // Submit handler (preserve existing behavior): save answers and redirect to unified alert
+        document
+            .getElementById("quiz-form")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Salvar respostas da etapa 2
+                saveAnswers(["q9", "q10", "q11", "q12", "q13"]);
+
+                // Calcular risco total (conta respostas positivas = 1)
+                let totalRisk = 0;
+                for (let i = 1; i <= 13; i++) {
+                    const answer = parseInt(
+                        sessionStorage.getItem(`q${i}`) || "0"
                     );
-                    if (currentQtnum > 1) {
-                        const previousQtnum = currentQtnum - 1;
-                        sessionStorage.setItem("qtnum", previousQtnum);
-                        showQuestion(previousQtnum);
-                    }
-                });
+                    if (answer === 1) totalRisk++;
+                }
 
-            document
-                .getElementById("next-button")
-                .addEventListener("click", function (e) {
-                    const currentQtnum = parseInt(
-                        sessionStorage.getItem("qtnum") || "1"
-                    );
-                    const steps = document.querySelectorAll(".step");
-                    if (currentQtnum < steps.length) {
-                        const nextQtnum = currentQtnum + 1;
-                        sessionStorage.setItem("qtnum", nextQtnum);
-                        showQuestion(nextQtnum);
-                    }
-
-                    // soma os values das perguntas. se der >= 2, pula pra result.html
-                    // Count only positive answers (value === 1). If >= 2, redirect immediately to unified alert.
-                    let positiveCount = 0;
-                    for (let i = 1; i <= 13; i++) {
-                        const answer = parseInt(
-                            sessionStorage.getItem("q" + i) || "0"
-                        );
-                        if (answer === 1) positiveCount++;
-                    }
-                    if (positiveCount >= 2) {
-                        e.preventDefault();
-                        window.location.href = "../alert.html?type=danger";
-                    }
-                });
-
-            document.addEventListener("DOMContentLoaded", function () {
-                populateUserSummary();
-                const savedQtnum = parseInt(
-                    sessionStorage.getItem("qtnum") || "1"
-                );
-                showQuestion(savedQtnum);
+                let alertType = totalRisk >= 2 ? "danger" : "ok";
+                window.location.href = `../alert.html?type=${alertType}`;
             });
 
-            function showQuestion(qtnum) {
+        // Navigation logic copied/adapted from p1.html so this page behaves step-by-step
+        document
+            .getElementById("previous-button")
+            .addEventListener("click", function () {
+                const currentQtnum = parseInt(
+                    sessionStorage.getItem("qtnum") || "1"
+                );
+                if (currentQtnum > 1) {
+                    const previousQtnum = currentQtnum - 1;
+                    sessionStorage.setItem("qtnum", previousQtnum);
+                    showQuestion(previousQtnum);
+                }
+            });
+
+        document
+            .getElementById("next-button")
+            .addEventListener("click", function (e) {
+                const currentQtnum = parseInt(
+                    sessionStorage.getItem("qtnum") || "1"
+                );
                 const steps = document.querySelectorAll(".step");
-                steps.forEach((step, index) => {
-                    if (index + 1 === qtnum) {
-                        step.style.display = "block";
-                    } else {
-                        step.style.display = "none";
-                    }
 
-                    // previous button visibility only after first step
-                    document.getElementById("previous-button").style.display =
-                        qtnum > 1 ? "inline-block" : "none";
+                // Save the selected answer for the current question before counting
+                const selected = document.querySelector(`input[name="q${currentQtnum}"]:checked`);
+                if (selected) {
+                    sessionStorage.setItem(`q${currentQtnum}`, selected.value);
+                }
 
-                    // next button only before last step
-                    document.getElementById("next-button").style.display =
-                        qtnum < steps.length ? "inline-block" : "none";
+                if (currentQtnum < steps.length) {
+                    const nextQtnum = currentQtnum + 1;
+                    sessionStorage.setItem("qtnum", nextQtnum);
+                    showQuestion(nextQtnum);
+                }
 
-                    // submit button visibility only on last step
-                    document.getElementById("submit-button").style.display =
-                        qtnum === steps.length ? "inline-block" : "none";
-                });
-            }
+                // Count only positive answers (value === 1). If >= 2, redirect immediately to unified alert.
+                let positiveCount = 0;
+                for (let i = 1; i <= 13; i++) {
+                    const answer = parseInt(sessionStorage.getItem("q" + i) || "0");
+                    if (answer === 1) positiveCount++;
+                }
+                if (positiveCount >= 2) {
+                    e.preventDefault();
+                    window.location.href = "../alert.html?type=danger";
+                }
+            });
 
-            // initialize page qtnum to first step of this stage
-            sessionStorage.setItem("qtnum", 1);
-        </script>
-    </body>
+        document.addEventListener("DOMContentLoaded", function () {
+            populateUserSummary();
+            const savedQtnum = parseInt(
+                sessionStorage.getItem("qtnum") || "1"
+            );
+            showQuestion(savedQtnum);
+        });
+
+        function showQuestion(qtnum) {
+            const steps = document.querySelectorAll(".step");
+            steps.forEach((step, index) => {
+                if (index + 1 === qtnum) {
+                    step.style.display = "block";
+                } else {
+                    step.style.display = "none";
+                }
+
+                // previous button visibility only after first step
+                document.getElementById("previous-button").style.display =
+                    qtnum > 1 ? "inline-block" : "none";
+
+                // next button only before last step
+                document.getElementById("next-button").style.display =
+                    qtnum < steps.length ? "inline-block" : "none";
+
+                // submit button visibility only on last step
+                document.getElementById("submit-button").style.display =
+                    qtnum === steps.length ? "inline-block" : "none";
+            });
+        }
+
+        // initialize page qtnum to first step of this stage
+        sessionStorage.setItem("qtnum", 1);
+    </script>
+</body>
+
 </html>
