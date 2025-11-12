@@ -1,96 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RADAVE</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADAVE</title>
-    <link rel="stylesheet" href="css/styles.css" />
-</head>
-
-<body>
-    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
-        <div class="big-div" style="display: flex; justify-content: space-between">
-            <div style="display: flex; align-items: center; gap: 1rem">
-                <div style="
-              width: 48px;
-              height: 48px;
-              background: var(--primary);
-              border-radius: 8px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #fff;
-              font-weight: 700;
-            ">
-                    R
+    <body>
+        <header
+            role="banner"
+            aria-label="RADAVE header"
+            style="margin-bottom: 1rem"
+            justify-content="space-between"
+        >
+            <div
+                class="big-div"
+                style="display: flex; justify-content: space-between"
+            >
+                <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                        style="
+                            width: 48px;
+                            height: 48px;
+                            background: var(--primary);
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #fff;
+                            font-weight: 700;
+                        "
+                    >
+                        R
+                    </div>
+                    <div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--accent-strong);
+                            "
+                        >
+                            RADAVE
+                        </div>
+                        <div
+                            style="font-size: 0.85rem; color: var(--text-muted)"
+                        >
+                            Rastreamento para disfagia
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <div style="font-weight: 700; color: var(--accent-strong)">
-                        RADAVE
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted)">
-                        Rastreamento para disfagia
-                    </div>
+                <a
+                    href="index.html"
+                    class="home-button"
+                    style="display: flex; align-items: center; margin: 10px"
+                >
+                    <img width="20px" src="assets/home.png" alt="" />
+                </a>
+
+                <script>
+                    const homeButton = document.querySelector(".home-button");
+                    homeButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        window.location.href = "index.html";
+
+                        sessionStorage.clear();
+                    });
+                </script>
+            </div>
+        </header>
+
+        <main id="main-container">
+            <div>
+                <h1>
+                    Rastreamento para a disfagia no acidente vascular encefálico
+                </h1>
+                <h3>Bem-vindo ao sistema de Questionário RADAVE</h3>
+                <p>Clique no botão abaixo para iniciar um novo registro.</p>
+                <div class="options-main">
+                    <button id="start-button" class="primary-button">
+                        Novo Registro
+                    </button>
+
+                    <a
+                        href="visualizacao.html"
+                        id="data-view"
+                        class="link-primary"
+                        >Visualização de registros</a
+                    >
                 </div>
             </div>
-            <a href="index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
-                <img width="20px" src="assets/home.png" alt="" />
-            </a>
+        </main>
 
+        <footer
+            role="contentinfo"
+            aria-label="site footer"
+            style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
+        >
+            <div>
+                © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
+            </div>
+            <div style="margin-top: 0.25rem"></div>
             <script>
-                const homeButton = document.querySelector('.home-button');
-                homeButton.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    window.location.href = "index.html";
-
-                    sessionStorage.clear();
-                });
+                document
+                    .getElementById("footer-date")
+                    ?.append(new Date().toLocaleDateString());
             </script>
-        </div>
-    </header>
-
-    <main id="main-container">
-        <div>
-            <h1>Rastreamento para a disfagia no acidente vascular encefálico</h1>
-            <h3>Bem-vindo ao sistema de Questionário RADAVE</h3>
-            <p>Clique no botão abaixo para iniciar um novo registro.</p>
-            <div class="options-main">
-                <button id="start-button" class="primary-button">
-                    Novo Registro
-                </button>
-
-                <a href="visualizacao.html" id="data-view" class="link-primary">Visualização de registros</a>
-            </div>
-        </div>
-    </main>
-
-    <footer role="contentinfo" aria-label="site footer"
-        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
-        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
-        <div style="margin-top: 0.25rem"></div>
+        </footer>
         <script>
             document
-                .getElementById("footer-date")
-                ?.append(new Date().toLocaleDateString());
+                .getElementById("start-button")
+                .addEventListener("click", () => {
+                    document.body.classList.add("fade-out");
+                    setTimeout(() => {
+                        window.location.href = "cadastro.html";
+                    }, 500);
+                    localStorage.setItem("danger", 0);
+                });
+
+            document
+                .getElementById("data-view")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.body.classList.add("fade-out");
+                    setTimeout(() => {
+                        window.location.href = e.target.href;
+                    }, 500);
+                });
         </script>
-    </footer>
-    <script>
-        document.getElementById("start-button").addEventListener("click", () => {
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = "cadastro.html";
-            }, 500);
-        });
-
-        document.getElementById("data-view").addEventListener("click", (e) => {
-            e.preventDefault();
-            document.body.classList.add("fade-out");
-            setTimeout(() => {
-                window.location.href = e.target.href;
-            }, 500);
-        });
-    </script>
-</body>
-
+    </body>
 </html>

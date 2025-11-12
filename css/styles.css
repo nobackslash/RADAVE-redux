@@ -1,217 +1,247 @@
 /* Agradecimento ao https://github.com/Thuuuur pela dica das variáveis de cor */
 :root {
-  --primary: #005b96;
-  --primary-light: #0077c2;
-  --primary-background: #e6f0fa;
-  --primary-dark: #004b7c;
-  --success: #28a745;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --text: #2c3e50;
-  --text-light: #6c757d;
-  --background: #f8f9fa;
-  --white: #ffffff;
-  --border: #dee2e6;
+    --primary: #005b96;
+    --primary-light: #0077c2;
+    --primary-background: #e6f0fa;
+    --primary-dark: #004b7c;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --text: #2c3e50;
+    --text-light: #6c757d;
+    --background: #f8f9fa;
+    --white: #ffffff;
+    --border: #dee2e6;
 }
 
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  color: var(--text);
-  background: var(--primary-background);
-  text-align: left;
-  justify-content: center;
-  transition: 100ms;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    color: var(--text);
+    background: var(--primary-background);
+    text-align: left;
+    justify-content: center;
+    transition: 100ms;
 }
 
 #main-container {
-  background-color: white;
-  border-radius: 10px;
-  max-width: 800px;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 40px;
 }
 
 h1,
 h2,
 h3 {
-  color: var(--primary-dark);
-  margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .step {
-  margin: 10px;
-  padding: 10px;
-  border: #004b7c 2px solid;
-  border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    border: #004b7c 2px solid;
+    border-radius: 10px;
 }
 
 input,
 select {
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 input:focus,
 select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 91, 150, 0.1);
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 91, 150, 0.1);
 }
 
 /* Buttons */
 .primary-button {
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  width: 100%;
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
 }
 
 .primary-button:hover {
-  background: var(--primary-dark);
+    background: var(--primary-dark);
 }
 
 #patient-form {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 .alert {
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  font-weight: 500;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .alert-danger {
-  background: var(--danger);
-  color: var(--white);
+    background: var(--background);
+    border: 2px solid var(--danger);
+}
+.alert-danger h1 {
+    color: var(--danger);
 }
 
 .alert-success {
-  background: var(--success);
-  color: var(--white);
+    background: var(--success);
+    color: var(--white);
 }
 
 .fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .button-box {
-  text-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-#submit-button {
-  margin-top: 1rem;
-  background-color: lightgray;
-  border-radius: 10px;
-  border: none;
-  width: 50%;
-  transition: 200ms;
+#submit-button,
+#previous-button,
+#next-button {
+    margin-top: 1rem;
+    background-color: lightgray;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    transition: 200ms;
+    padding: 10px;
 }
 
 #submit-button:hover {
-  margin-top: 1rem;
-  background-color: var(--primary);
-  color: white;
-  border-radius: 10px;
-  border: none;
-  width: 50%;
-  transform: scale(01.1);
+    margin-top: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    transform: scale(1.01);
+}
+
+#next-button:hover {
+    margin-top: 1rem;
+    background-color: var(--success);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    transform: scale(1.01);
+}
+#previous-button:hover {
+    margin-top: 1rem;
+    background-color: var(--danger);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    transform: scale(1.01);
 }
 
 .link-primary {
-  text-decoration: none;
-  color: var(--primary);
+    text-decoration: none;
+    color: var(--primary);
 }
 
 .options-main {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Para a página de Alerta */
 #alert-container {
-  text-align: center;
-  padding: 2rem;
-  border-radius: 8px;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
 }
 
 .alert-ok {
-  background: var(--white);
-  border: 2px solid var(--success);
+    background: var(--white);
+    border: 2px solid var(--success);
 }
 
 .alert-ok h1 {
-  color: var(--success);
+    color: var(--success);
 }
 
 .alert-ok .final {
-  color: var(--success);
-  font-size: 1.5rem;
-  margin: 1rem 0;
+    color: var(--success);
+    font-size: 1.5rem;
+    margin: 1rem 0;
 }
 
 .alert-ok .paciente {
-  color: var(--text);
-  font-size: 1.1rem;
-  display: block;
-  margin: 1rem 0;
+    color: var(--text);
+    font-size: 1.1rem;
+    display: block;
+    margin: 1rem 0;
 }
 
 .liberado {
-  background: var(--success);
-  color: var(--white);
-  padding: 1rem;
-  border-radius: 8px;
-  display: inline-block;
+    background: var(--success);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
 }
 
-#save-data-btn, #continue-button {
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 1rem;
+#save-data-btn,
+#continue-button {
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
 }
 
-#save-data-btn:hover, #continue-button:hover {
-  background: var(--primary-dark);
+#save-data-btn:hover,
+#continue-button:hover {
+    background: var(--primary-dark);
 }
 
 #loading {
-  display: none;
-  margin-top: 1rem;
-  color: var(--text-muted);
-  font-style: italic;
+    display: none;
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
 }
