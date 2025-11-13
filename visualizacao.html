@@ -1,94 +1,514 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RADAVE - Visualização de Registros</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADAVE - Visualização de Registros</title>
-    <link rel="stylesheet" href="css/styles.css" />
-</head>
+    <body>
+        <header
+            role="banner"
+            aria-label="RADAVE header"
+            style="margin-bottom: 1rem"
+            justify-content="space-between"
+        >
+            <div
+                class="big-div"
+                style="display: flex; justify-content: space-between"
+            >
+                <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                        style="
+                            width: 48px;
+                            height: 48px;
+                            background: var(--primary);
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #fff;
+                            font-weight: 700;
+                        "
+                    >
+                        R
+                    </div>
+                    <div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--accent-strong);
+                            "
+                        >
+                            RADAVE
+                        </div>
+                        <div
+                            style="font-size: 0.85rem; color: var(--text-muted)"
+                        >
+                            Rastreamento para disfagia
+                        </div>
+                    </div>
+                </div>
+                <a
+                    href="index.html"
+                    class="home-button"
+                    style="display: flex; align-items: center; margin: 10px"
+                >
+                    <img width="20px" src="assets/home.png" alt="" />
+                </a>
 
-<body>
-    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
-        <div class="big-div" style="display: flex; justify-content: space-between">
-            <div style="display: flex; align-items: center; gap: 1rem">
-                <div style="
-              width: 48px;
-              height: 48px;
-              background: var(--primary);
-              border-radius: 8px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: #fff;
-              font-weight: 700;
-            ">
-                    R
-                </div>
-                <div>
-                    <div style="font-weight: 700; color: var(--accent-strong)">
-                        RADAVE
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted)">
-                        Rastreamento para disfagia
-                    </div>
-                </div>
+                <script>
+                    const homeButton = document.querySelector(".home-button");
+                    homeButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        window.location.href = "index.html";
+
+                        sessionStorage.clear();
+                    });
+                </script>
             </div>
-            <a href="index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
-                <img width="20px" src="assets/home.png" alt="" />
-            </a>
+        </header>
 
+        <main id="main-container" class="data-view-main-container">
+            <h1>Sumário de resultados</h1>
+            <hr style="color: rgba(0, 0, 0, 0.18)" />
+            <section id="data" class="data-list">
+                <!-- Entrada 1 - Risco Alto -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Maria Silva Santos</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital das Clínicas | Data do teste:
+                                10/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Maria Silva
+                                Santos
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 15/03/1956
+                            </p>
+                            <p><strong>Gênero:</strong> Feminino</p>
+                            <p><strong>Data do AVC:</strong> 08/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                direito
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                das Clínicas
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #d32f2f"
+                                    >⚠ RISCO ALTO - Reprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 2 - Risco Baixo -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>João Pedro Oliveira</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital São Luiz | Data do teste:
+                                09/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> João Pedro
+                                Oliveira
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 22/07/1978
+                            </p>
+                            <p><strong>Gênero:</strong> Masculino</p>
+                            <p><strong>Data do AVC:</strong> 05/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                esquerdo
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                São Luiz
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #2e7d32"
+                                    >✓ RISCO BAIXO - Aprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 3 - Risco Alto (interrompido na Etapa I) -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Ana Carolina Ferreira</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Sírio-Libanês | Data do teste:
+                                08/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Ana Carolina
+                                Ferreira
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 10/12/1963
+                            </p>
+                            <p><strong>Gênero:</strong> Feminino</p>
+                            <p><strong>Data do AVC:</strong> 07/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Tronco cerebral
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Sírio-Libanês
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #d32f2f"
+                                    >⚠ RISCO ALTO - Reprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa I</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 4 - Risco Moderado -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Carlos Eduardo Lima</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Albert Einstein | Data do
+                                teste: 07/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Carlos Eduardo
+                                Lima
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 05/09/1970
+                            </p>
+                            <p><strong>Gênero:</strong> Masculino</p>
+                            <p><strong>Data do AVC:</strong> 03/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                direito
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Albert Einstein
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #2e7d32"
+                                    >✓ RISCO BAIXO - Aprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 5 - Risco Alto -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Mariana Costa Almeida</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital São Camilo | Data do teste:
+                                06/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Mariana Costa
+                                Almeida
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 28/04/1952
+                            </p>
+                            <p><strong>Gênero:</strong> Feminino</p>
+                            <p><strong>Data do AVC:</strong> 02/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                esquerdo
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                São Camilo
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #d32f2f"
+                                    >⚠ RISCO ALTO - Reprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 6 - Risco Baixo -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Roberto Mendes Souza</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Beneficência Portuguesa | Data
+                                do teste: 05/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Roberto Mendes
+                                Souza
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 18/06/1985
+                            </p>
+                            <p><strong>Gênero:</strong> Masculino</p>
+                            <p><strong>Data do AVC:</strong> 01/11/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                direito
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Beneficência Portuguesa
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #2e7d32"
+                                    >✓ RISCO BAIXO - Aprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 7 - Risco Alto (interrompido na Etapa II) -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Fernanda Rodrigues Barbosa</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Santa Cruz | Data do teste:
+                                04/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Fernanda
+                                Rodrigues Barbosa
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 12/11/1968
+                            </p>
+                            <p><strong>Gênero:</strong> Feminino</p>
+                            <p><strong>Data do AVC:</strong> 30/10/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Tronco cerebral
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Santa Cruz
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #d32f2f"
+                                    >⚠ RISCO ALTO - Reprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 8 - Risco Baixo -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Paulo Henrique Martins</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital São Paulo | Data do teste:
+                                03/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Paulo Henrique
+                                Martins
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 30/01/1992
+                            </p>
+                            <p><strong>Gênero:</strong> Masculino</p>
+                            <p><strong>Data do AVC:</strong> 28/10/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                esquerdo
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                São Paulo
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #2e7d32"
+                                    >✓ RISCO BAIXO - Aprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 9 - Risco Alto -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Beatriz Andrade Nunes</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Nove de Julho | Data do teste:
+                                02/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Beatriz Andrade
+                                Nunes
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 07/08/1959
+                            </p>
+                            <p><strong>Gênero:</strong> Feminino</p>
+                            <p><strong>Data do AVC:</strong> 27/10/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                direito
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Nove de Julho
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #d32f2f"
+                                    >⚠ RISCO ALTO - Reprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+
+                <!-- Entrada 10 - Risco Moderado -->
+                <div class="entry">
+                    <details>
+                        <summary>
+                            <section class="entry-patient-name">
+                                <p>Ricardo José Campos</p>
+                            </section>
+                            <section class="entry-patient-subtitle">
+                                Unidade: Hospital Oswaldo Cruz | Data do teste:
+                                01/11/2025
+                            </section>
+                        </summary>
+                        <article class="entry-patient-data">
+                            <p>
+                                <strong>Nome completo:</strong> Ricardo José
+                                Campos
+                            </p>
+                            <p>
+                                <strong>Data de nascimento:</strong> 14/02/1975
+                            </p>
+                            <p><strong>Gênero:</strong> Masculino</p>
+                            <p><strong>Data do AVC:</strong> 25/10/2025</p>
+                            <p>
+                                <strong>Local da lesão:</strong> Hemisfério
+                                esquerdo
+                            </p>
+                            <p>
+                                <strong>Unidade de referência:</strong> Hospital
+                                Oswaldo Cruz
+                            </p>
+                            <hr />
+                            <p>
+                                <strong>Resultado:</strong>
+                                <span style="color: #2e7d32"
+                                    >✓ RISCO BAIXO - Aprovado(a)</span
+                                >
+                            </p>
+                            <p><strong>Etapa final:</strong> Etapa II</p>
+                        </article>
+                    </details>
+                </div>
+            </section>
+        </main>
+
+        <footer
+            role="contentinfo"
+            aria-label="site footer"
+            style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
+        >
+            <div>
+                © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
+            </div>
+            <div style="margin-top: 0.25rem"></div>
             <script>
-                const homeButton = document.querySelector('.home-button');
-                homeButton.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    window.location.href = "index.html";
-
-                    sessionStorage.clear();
-                });
+                document
+                    .getElementById("footer-date")
+                    ?.append(new Date().toLocaleDateString());
             </script>
-        </div>
-    </header>
-
-    <main id="main-container" class="data-view-main-container">
-        <h1>Sumário de resultados</h1>
-        <hr style="color: rgba(0, 0, 0, 0.18)" />
-        <section id="data" class="data-list">
-            <div class="entry">
-                <details>
-                    <summary>
-                        <section class="entry-patient-name">
-                            <p>Luiz Otávio Moreira</p>
-                        </section>
-                        <section class="entry-patient-subtitle">
-                            Unidade: São Hospital Pinheiros | Data do teste: 23/05/2025
-                        </section>
-                    </summary>
-                    <article class="entry-patient-data">
-                        <p><strong>Nome completo:</strong> Luiz Otávio Moreira</p>
-                        <p><strong>Data de nascimento:</strong> 26/05/1988</p>
-                        <p><strong>Gênero:</strong> Masculino</p>
-                        <p><strong>Data do AVC:</strong> 01/07/2025</p>
-                        <p><strong>Local da lesão:</strong> Hemisfério esquerdo</p>
-                        <p><strong>Unidade de referência:</strong> São Hospital Pinheiros</p>
-                    </article>
-                    <article class="entry-patient-quiz"></article>
-                </details>
-            </div>
-        </section>
-    </main>
-
-    <footer role="contentinfo" aria-label="site footer"
-        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
-        <div>© RADAVE — Sistema de triagem. Desenvolvido para uso clínico.</div>
-        <div style="margin-top: 0.25rem"></div>
-        <script>
-            document
-                .getElementById("footer-date")
-                ?.append(new Date().toLocaleDateString());
-        </script>
-    </footer>
-    <script src="js/patientView.js"></script>
-</body>
-
+        </footer>
+        <!-- <script src="js/patientView.js"></script> -->
+    </body>
 </html>

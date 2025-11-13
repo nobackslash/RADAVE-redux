@@ -262,3 +262,103 @@ select:focus {
     color: var(--text-muted);
     font-style: italic;
 }
+
+.data-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.entry {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.entry:hover {
+    box-shadow: 0 4px 12px rgba(0, 91, 150, 0.15);
+}
+
+details {
+    background: var(--white);
+}
+
+summary {
+    padding: 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:hover {
+    background: var(--background);
+}
+
+details[open] summary {
+    background: var(--primary-background);
+    border-bottom: 1px solid var(--border);
+}
+
+.entry-patient-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.25rem;
+}
+
+.entry-patient-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.entry-patient-data {
+    padding: 1.5rem;
+    background: var(--white);
+}
+
+.entry-patient-data p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.entry-patient-data strong {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.entry-patient-data hr {
+    margin: 1rem 0;
+}
+
+/* Classes de risco */
+.risk-high {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.risk-moderate {
+    color: var(--warning);
+    font-weight: 600;
+}
+
+.risk-low {
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
