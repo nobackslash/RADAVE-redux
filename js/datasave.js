@@ -29,13 +29,15 @@ document.getElementById("save-data-btn").addEventListener("click", () => {
             case "0":
                 quizAnswers.push(0);
                 break;
-            case "-1":
-                quizAnswers.push(2);
-                break;
+            // case "-1":
+            //     quizAnswers.push(2);
+            //     break;
             default:
                 quizAnswers.push(3);
         }
     }
+    // pega o dia de hoje
+    const today = new Date().toLocaleDateString("pt-BR");
 
     // Criar um objeto com os dados coletados
     const patientData = {
@@ -45,6 +47,7 @@ document.getElementById("save-data-btn").addEventListener("click", () => {
         Gênero: patientGender,
         "Local da lesão": patientWoundLocal,
         "Local do atendimento": unit,
+        "Data do registro": today,
     };
 
     //dicionario do quiz
@@ -82,36 +85,11 @@ document.getElementById("save-data-btn").addEventListener("click", () => {
     }));
     const wsQuiz = XLSX.utils.json_to_sheet(quizData);
     XLSX.utils.book_append_sheet(wb, wsQuiz, "Respostas do Questionário");
-    XLSX.writeFile(wb, `sintomas_${patientName}.xlsx`);
+    XLSX.writeFile(wb, `registro_${patientName}${today}.xlsx`);
 
     // Logar os dados para verificar se estão corretos antes de enviar
     console.log(
         "Dados a serem exportados (XLSX):",
         JSON.stringify(patientData)
     );
-
-    //Por algum motivo isso enviava para alguma API, nessa alteração, vamos usar uma library local para converter o json em xlsx. -P
-    // Enviar os dados para o Google Sheets usando a URL da API
-    // fetch(
-    //     "not today spammy people",
-    //     {
-    //         method: "POST",
-    //         mode: "no-cors",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(patientData),
-    //     }
-    // )
-    //     .then(() => {
-    //         alert("Dados gravados com sucesso!");
-
-    //         localStorage.clear();
-
-    //         window.location.href = "index.html";
-    //     })
-    //     .catch((error) => {
-    //         console.error("Erro ao gravar os dados:", error);
-    //         alert("Erro ao gravar os dados.");
-    //     });
 });
