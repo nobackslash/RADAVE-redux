@@ -129,9 +129,36 @@ select:focus {
     gap: 10px;
 }
 
-#submit-button,
-#previous-button,
-#next-button {
+.allowed-submit-button {
+    margin-top: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+}
+
+.allowed-next-button {
+    margin-top: 1rem;
+    background-color: var(--success);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+}
+#previous-button {
+    margin-top: 1rem;
+    background-color: var(--danger);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    padding: 10px;
+}
+
+.disallowed-submit-button {
     margin-top: 1rem;
     background-color: lightgray;
     border-radius: 10px;
@@ -141,33 +168,23 @@ select:focus {
     padding: 10px;
 }
 
-#submit-button:hover {
+.disallowed-next-button {
     margin-top: 1rem;
-    background-color: var(--primary);
-    color: white;
+    background-color: lightgray;
     border-radius: 10px;
     border: none;
     width: 50%;
-    transform: scale(1.01);
+    transition: 200ms;
+    padding: 10px;
 }
-
-#next-button:hover {
+.disallowed-previous-button:hover {
     margin-top: 1rem;
-    background-color: var(--success);
-    color: white;
+    background-color: lightgray;
     border-radius: 10px;
     border: none;
     width: 50%;
-    transform: scale(1.01);
-}
-#previous-button:hover {
-    margin-top: 1rem;
-    background-color: var(--danger);
-    color: white;
-    border-radius: 10px;
-    border: none;
-    width: 50%;
-    transform: scale(1.01);
+    transition: 200ms;
+    padding: 10px;
 }
 
 .link-primary {

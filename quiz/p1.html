@@ -1,412 +1,503 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RADAVE - Etapa I</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <style>
+            button:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADAVE - Etapa I</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-</head>
+    <body>
+        <header
+            role="banner"
+            aria-label="RADAVE header"
+            style="margin-bottom: 1rem"
+            justify-content="space-between"
+        >
+            <div
+                class="big-div"
+                style="display: flex; justify-content: space-between"
+            >
+                <div style="display: flex; align-items: center; gap: 1rem">
+                    <div
+                        style="
+                            width: 48px;
+                            height: 48px;
+                            background: var(--primary);
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #fff;
+                            font-weight: 700;
+                        "
+                    >
+                        R
+                    </div>
 
-<body>
-    <header role="banner" aria-label="RADAVE header" style="margin-bottom: 1rem" justify-content="space-between">
-        <div class="big-div" style="display: flex; justify-content: space-between">
-            <div style="display: flex; align-items: center; gap: 1rem">
-                <div style="width: 48px; height: 48px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
-                    R
+                    <div>
+                        <div
+                            style="
+                                font-weight: 700;
+                                color: var(--accent-strong);
+                            "
+                        >
+                            RADAVE
+                        </div>
+                        <div
+                            style="font-size: 0.85rem; color: var(--text-muted)"
+                        >
+                            Rastreamento para disfagia
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <div style="font-weight: 700; color: var(--accent-strong);">
-                        RADAVE
-                    </div>
-                    <div style="font-size: 0.85rem; color: var(--text-muted)">
-                        Rastreamento para disfagia
-                    </div>
-                </div>
+                <a
+                    href="../index.html"
+                    class="home-button"
+                    style="display: flex; align-items: center; margin: 10px"
+                >
+                    <img width="20px" src="../assets/home.png" alt="" />
+                </a>
 
+                <script>
+                    const homeButton = document.querySelector(".home-button");
+                    homeButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        window.location.href = "../index.html";
+
+                        sessionStorage.clear();
+                    });
+                </script>
             </div>
-            
-            <a href="../index.html" class="home-button" style="display: flex; align-items: center; margin: 10px">
-                <img width="20px" src="../assets/home.png" alt="" />
-            </a>
+        </header>
 
+        <main id="main-container">
+            <div id="quiz-container">
+                <h1>
+                    Rastreamento para a disfagia no acidente vascular encefálico
+                </h1>
+                <form id="quiz-form">
+                    <div id="user-summary">
+                        <h2>Informações do Paciente</h2>
+                        <p>
+                            <strong>Nome:</strong>
+                            <span id="summary-name"></span>
+                        </p>
+                        <p>
+                            <strong>Idade:</strong>
+                            <span id="summary-age"></span>
+                        </p>
+                        <p>
+                            <strong>Data do AVC:</strong>
+                            <span id="summary-date-avc"></span>
+                        </p>
+                        <p>
+                            <strong>Gênero:</strong>
+                            <span id="summary-gender"></span>
+                        </p>
+                    </div>
+                    <hr />
+
+                    <!-- perguntas -->
+                    <h2>Etapa 1 - FATORES PREDITIVOS DE RISCO</h2>
+                    <div id="step-1" class="step">
+                        <h1>1. Apresenta dificuldade de manter-se acordado?</h1>
+                        <p>
+                            <strong>Instrução:</strong> Chame o paciente pelo
+                            nome e observe.
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Não responde,
+                            sonolento, necessitando de estímulos verbais e
+                            táteis para se manter alerta
+                        </p>
+                        <label>
+                            <input type="radio" name="q1" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+                    <div id="step-2" class="step" style="display: none">
+                        <h1>
+                            2. Apresenta histórico de dificuldade de deglutição?
+                        </h1>
+                        <p>
+                            <strong>Instrução:</strong> Pergunte ao paciente,
+                            acompanhe ou cheque o prontuário
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Engasgos,
+                            tosses durante a alimentação, uso de via alternativa
+                            de alimentação, necessidade de adaptação da dieta
+                            previamente
+                        </p>
+                        <label>
+                            <input type="radio" name="q2" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-3" class="step" style="display: none">
+                        <h1>
+                            3. Apresenta dificuldade de manter-se sentado com
+                            apoio e com a cabeça reta?
+                        </h1>
+                        <p>
+                            <strong>Instrução:</strong> Posture o paciente
+                            sentado com o decúbito elevado
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Não mantém
+                            controle da cabeça e/ou de tronco mesmo que apoiado.
+                        </p>
+                        <label>
+                            <input type="radio" name="q3" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-4" class="step" style="display: none">
+                        <h1>4. Apresenta alteração na voz?</h1>
+                        <p>
+                            <strong>Instrução:</strong> Observe a voz do
+                            paciente durante a conversa
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Voz rouca,
+                            sem sonorização ou pouca sonorização.
+                        </p>
+                        <label>
+                            <input type="radio" name="q4" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-5" class="step" style="display: none">
+                        <h1>
+                            5. Apresenta dificuldade na fala e/ou linguagem?
+                        </h1>
+                        <p>
+                            <strong>Instrução:</strong> Observe a fala e
+                            linguagem do paciente durante a conversa espontânea
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Não fala,
+                            fala arrastada, alteração na articulação
+                            (disartria), dificuldade para compreender o
+                            discurso, expressões orais fragmentadas, discurso
+                            incoerente
+                        </p>
+                        <label>
+                            <input type="radio" name="q5" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q5" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-6" class="step" style="display: none">
+                        <h1>6. Apresenta assimetria facial?</h1>
+                        <p>
+                            <strong>Instrução:</strong> Observe a face no
+                            repouso e solicite bico e sorriso
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Redução ou
+                            ausência total do movimento de um dos lados da face.
+                        </p>
+                        <label>
+                            <input type="radio" name="q6" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q6" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-7" class="step" style="display: none">
+                        <h1>
+                            7. Apresenta dificuldade de movimentar lábios e
+                            língua?
+                        </h1>
+                        <p>
+                            <strong>Instrução:</strong> Solicite que o paciente
+                            mexa os lábios e a língua
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Não apresenta
+                            movimento, movimento lentificado, desvio do
+                            movimento.
+                        </p>
+                        <label>
+                            <input type="radio" name="q7" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q7" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+
+                    <div id="step-8" class="step" style="display: none">
+                        <h1>
+                            8. Apresenta dificuldade de engolir e gerenciar a
+                            deglutição de saliva/secreções espontaneamente ou
+                            sob comando?
+                        </h1>
+                        <p>
+                            <strong>Instrução:</strong> Observe se o paciente
+                            engole a saliva(movimento de subida laringe)
+                            espontaneamente o sob comando
+                        </p>
+                        <p>
+                            <strong>Possíveis alterações:</strong> Não observa
+                            deglutição, acúmulo de saliva na cavidade oral,
+                            baba, voz molhada, ruídos em via aérea alta.
+                        </p>
+                        <label>
+                            <input type="radio" name="q8" value="1" />
+                            Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="0" />
+                            Não
+                        </label>
+                        <label>
+                            <input type="radio" name="q8" value="-1" /> Não se
+                            aplica
+                        </label>
+                    </div>
+                    <div class="button-box">
+                        <button type="button" id="previous-button">
+                            Pergunta Anterior
+                        </button>
+                        <button type="submit" id="submit-button">
+                            Analisar Respostas
+                        </button>
+                        <button type="button" id="next-button">
+                            Próxima Pergunta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer
+            role="contentinfo"
+            aria-label="site footer"
+            style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem"
+        >
+            <div>
+                © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
+            </div>
+            <div style="margin-top: 0.25rem"></div>
             <script>
-                const homeButton = document.querySelector(".home-button");
-                homeButton.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    window.location.href = "../index.html";
-
-                    sessionStorage.clear();
-                });
+                document
+                    .getElementById("footer-date")
+                    ?.append(new Date().toLocaleDateString());
             </script>
-        </div>
-    </header>
-
-    <main id="main-container">
-        <div id="quiz-container">
-            <h1>
-                Rastreamento para a disfagia no acidente vascular encefálico
-            </h1>
-            <form id="quiz-form">
-                <div id="user-summary">
-                    <h2>Informações do Paciente</h2>
-                    <p>
-                        <strong>Nome:</strong>
-                        <span id="summary-name"></span>
-                    </p>
-                    <p>
-                        <strong>Idade:</strong>
-                        <span id="summary-age"></span>
-                    </p>
-                    <p>
-                        <strong>Data do AVC:</strong>
-                        <span id="summary-date-avc"></span>
-                    </p>
-                    <p>
-                        <strong>Gênero:</strong>
-                        <span id="summary-gender"></span>
-                    </p>
-                </div>
-                <hr />
-
-                <!-- perguntas -->
-                <h2>Etapa 1 - FATORES PREDITIVOS DE RISCO</h2>
-                <div id="step-1" class="step">
-                    <h1>1. Apresenta dificuldade de manter-se acordado?</h1>
-                    <p>
-                        <strong>Instrução:</strong> Chame o paciente pelo
-                        nome e observe.
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Não responde,
-                        sonolento, necessitando de estímulos verbais e
-                        táteis para se manter alerta
-                    </p>
-                    <label>
-                        <input type="radio" name="q1" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-                <div id="step-2" class="step" style="display: none">
-                    <h1>
-                        2. Apresenta histórico de dificuldade de deglutição?
-                    </h1>
-                    <p>
-                        <strong>Instrução:</strong> Pergunte ao paciente,
-                        acompanhe ou cheque o prontuário
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Engasgos,
-                        tosses durante a alimentação, uso de via alternativa
-                        de alimentação, necessidade de adaptação da dieta
-                        previamente
-                    </p>
-                    <label>
-                        <input type="radio" name="q2" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-3" class="step" style="display: none">
-                    <h1>
-                        3. Apresenta dificuldade de manter-se sentado com
-                        apoio e com a cabeça reta?
-                    </h1>
-                    <p>
-                        <strong>Instrução:</strong> Posture o paciente
-                        sentado com o decúbito elevado
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Não mantém
-                        controle da cabeça e/ou de tronco mesmo que apoiado.
-                    </p>
-                    <label>
-                        <input type="radio" name="q3" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q3" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q3" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-4" class="step" style="display: none">
-                    <h1>4. Apresenta alteração na voz?</h1>
-                    <p>
-                        <strong>Instrução:</strong> Observe a voz do
-                        paciente durante a conversa
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Voz rouca,
-                        sem sonorização ou pouca sonorização.
-                    </p>
-                    <label>
-                        <input type="radio" name="q4" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q4" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q4" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-5" class="step" style="display: none">
-                    <h1>
-                        5. Apresenta dificuldade na fala e/ou linguagem?
-                    </h1>
-                    <p>
-                        <strong>Instrução:</strong> Observe a fala e
-                        linguagem do paciente durante a conversa espontânea
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Não fala,
-                        fala arrastada, alteração na articulação
-                        (disartria), dificuldade para compreender o
-                        discurso, expressões orais fragmentadas, discurso
-                        incoerente
-                    </p>
-                    <label>
-                        <input type="radio" name="q5" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q5" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q5" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-6" class="step" style="display: none">
-                    <h1>6. Apresenta assimetria facial?</h1>
-                    <p>
-                        <strong>Instrução:</strong> Observe a face no
-                        repouso e solicite bico e sorriso
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Redução ou
-                        ausência total do movimento de um dos lados da face.
-                    </p>
-                    <label>
-                        <input type="radio" name="q6" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q6" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q6" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-7" class="step" style="display: none">
-                    <h1>
-                        7. Apresenta dificuldade de movimentar lábios e
-                        língua?
-                    </h1>
-                    <p>
-                        <strong>Instrução:</strong> Solicite que o paciente
-                        mexa os lábios e a língua
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Não apresenta
-                        movimento, movimento lentificado, desvio do
-                        movimento.
-                    </p>
-                    <label>
-                        <input type="radio" name="q7" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q7" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q7" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-
-                <div id="step-8" class="step" style="display: none">
-                    <h1>
-                        8. Apresenta dificuldade de engolir e gerenciar a
-                        deglutição de saliva/secreções espontaneamente ou
-                        sob comando?
-                    </h1>
-                    <p>
-                        <strong>Instrução:</strong> Observe se o paciente
-                        engole a saliva(movimento de subida laringe)
-                        espontaneamente o sob comando
-                    </p>
-                    <p>
-                        <strong>Possíveis alterações:</strong> Não observa
-                        deglutição, acúmulo de saliva na cavidade oral,
-                        baba, voz molhada, ruídos em via aérea alta.
-                    </p>
-                    <label>
-                        <input type="radio" name="q8" value="1" />
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" name="q8" value="0" />
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" name="q8" value="-1" /> Não se
-                        aplica
-                    </label>
-                </div>
-                <div class="button-box">
-                    <button type="button" id="previous-button">
-                        Pergunta Anterior
-                    </button>
-                    <button type="submit" id="submit-button">
-                        Analisar Respostas
-                    </button>
-                    <button type="button" id="next-button">
-                        Próxima Pergunta
-                    </button>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <footer role="contentinfo" aria-label="site footer"
-        style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem">
-        <div>
-            © RADAVE — Sistema de triagem. Desenvolvido para uso clínico.
-        </div>
-        <div style="margin-top: 0.25rem"></div>
+        </footer>
+        <script src="../js/quizCommon.js"></script>
         <script>
+            // verificar se tem alguma questão marcada pra mudar o estilo dos botões
+            function checkCurrentAnswer() {
+                const currentQtnum = parseInt(
+                    sessionStorage.getItem("qtnum") || "1"
+                );
+                const selected = document.querySelector(
+                    `input[name="q${currentQtnum}"]:checked`
+                );
+
+                const nextButton = document.getElementById("next-button");
+                const submitButton = document.getElementById("submit-button");
+
+                // muda o estilo dos botões baseado na seleção
+                if (selected) {
+                    if (currentQtnum < 8) {
+                        nextButton.className = "allowed-next-button";
+                    } else {
+                        submitButton.className = "allowed-submit-button";
+                    }
+                } else {
+                    if (currentQtnum < 8) {
+                        nextButton.className = "disallowed-next-button";
+                    } else {
+                        submitButton.className = "disallowed-submit-button";
+                    }
+                }
+            }
+
+            // Adiciona listener para todas as opções de radio
             document
-                .getElementById("footer-date")
-                ?.append(new Date().toLocaleDateString());
+                .querySelectorAll('input[type="radio"]')
+                .forEach((radio) => {
+                    radio.addEventListener("change", checkCurrentAnswer);
+                });
+
+            document
+                .getElementById("quiz-form")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    saveAnswers([
+                        "q1",
+                        "q2",
+                        "q3",
+                        "q4",
+                        "q5",
+                        "q6",
+                        "q7",
+                        "q8",
+                    ]);
+                    // Count positive answers
+                    let positiveCount = 0;
+                    for (let i = 1; i <= 8; i++) {
+                        const answer = parseInt(
+                            sessionStorage.getItem("q" + i) || "0"
+                        );
+                        if (answer === 1) positiveCount++;
+                    }
+                    if (positiveCount >= 2) {
+                        window.location.href = "../alert.html?type=danger";
+                    } else {
+                        window.location.href = "../alert.html?type=next";
+                    }
+                });
+
+            document
+                .getElementById("previous-button")
+                .addEventListener("click", function () {
+                    const currentQtnum = parseInt(
+                        sessionStorage.getItem("qtnum") || "1"
+                    );
+                    if (currentQtnum > 1) {
+                        const previousQtnum = currentQtnum - 1;
+                        sessionStorage.setItem("qtnum", previousQtnum);
+                        showQuestion(previousQtnum);
+                    }
+                });
+
+            document
+                .getElementById("next-button")
+                .addEventListener("click", function (e) {
+                    const currentQtnum = parseInt(
+                        sessionStorage.getItem("qtnum") || "1"
+                    );
+
+                    const selected = document.querySelector(
+                        `input[name="q${currentQtnum}"]:checked`
+                    );
+                    if (selected) {
+                        sessionStorage.setItem(
+                            `q${currentQtnum}`,
+                            selected.value
+                        );
+                    }
+                    let positiveCount = 0;
+                    for (let i = 1; i <= 8; i++) {
+                        const answer = parseInt(
+                            sessionStorage.getItem("q" + i) || "0"
+                        );
+                        if (answer === 1) positiveCount++;
+                    }
+
+                    if (positiveCount >= 2) {
+                        e.preventDefault();
+                        window.location.href = "../alert.html?type=danger";
+                    }
+
+                    if (currentQtnum < 8) {
+                        const nextQtnum = currentQtnum + 1;
+                        sessionStorage.setItem("qtnum", nextQtnum);
+                        showQuestion(nextQtnum);
+                    }
+                });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                populateUserSummary();
+                const savedQtnum = parseInt(
+                    sessionStorage.getItem("qtnum") || "1"
+                );
+                showQuestion(savedQtnum);
+            });
+
+            function showQuestion(qtnum) {
+                const steps = document.querySelectorAll(".step");
+                steps.forEach((step, index) => {
+                    if (index + 1 === qtnum) {
+                        step.style.display = "block";
+                    } else {
+                        step.style.display = "none";
+                    }
+
+                    document.getElementById("previous-button").style.display =
+                        qtnum > 1 ? "inline-block" : "none";
+
+                    document.getElementById("next-button").style.display =
+                        qtnum < 8 ? "inline-block" : "none";
+
+                    document.getElementById("submit-button").style.display =
+                        qtnum === 8 ? "inline-block" : "none";
+                });
+
+                // Verifica o estado dos botões após mostrar a pergunta
+                checkCurrentAnswer();
+            }
         </script>
-    </footer>
-    <script src="../js/quizCommon.js"></script>
-    <script>
-        document.getElementById("quiz-form")
-            .addEventListener("submit", function (e) {
-                e.preventDefault();
-                saveAnswers([
-                    "q1",
-                    "q2",
-                    "q3",
-                    "q4",
-                    "q5",
-                    "q6",
-                    "q7",
-                    "q8",
-                ]);
-                // Count positive answers
-                let positiveCount = 0;
-                for (let i = 1; i <= 8; i++) {
-                    const answer = parseInt(sessionStorage.getItem("q" + i) || "0");
-                    if (answer === 1) positiveCount++;
-                }
-                if (positiveCount >= 2) {
-                    // Precisamos que isso aqui fique para que na ultima pergunta, 
-                    // caso seja sim, consiga ativar o alerta, porque a outra lógica não executa 
-                    // com o submit-button, e sim com o next-button
-                    window.location.href = "../alert.html?type=danger";
-                } else {
-                    window.location.href = "../alert.html?type=next";
-                }
-            });
-
-        document.getElementById("previous-button").addEventListener("click", function () {
-            const currentQtnum = parseInt(sessionStorage.getItem("qtnum") || "1");
-            if (currentQtnum > 1) {
-                const previousQtnum = currentQtnum - 1;
-                sessionStorage.setItem("qtnum", previousQtnum);
-                showQuestion(previousQtnum);
-            }
-        });
-
-        document.getElementById("next-button").addEventListener("click", function (e) {
-            const currentQtnum = parseInt(sessionStorage.getItem("qtnum") || "1");
-
-            // Vamos pegar a opção selecionada do quiz, e salve o item já no sessionStorage
-            const selected = document.querySelector(`input[name="q${currentQtnum}"]:checked`);
-            if (selected) {
-                sessionStorage.setItem(`q${currentQtnum}`, selected.value);
-            }
-
-            if (currentQtnum < 8) {
-                const nextQtnum = currentQtnum + 1;
-                sessionStorage.setItem("qtnum", nextQtnum);
-                showQuestion(nextQtnum);
-            }
-
-            // Vamos verificar se o usuário marcou 2 sim
-            let positiveCount = 0;
-            for (let i = 1; i <= 8; i++) {
-                const answer = parseInt(sessionStorage.getItem("q" + i) || "0");
-                if (answer === 1) positiveCount++;
-            }
-
-            if (positiveCount >= 2) {
-                e.preventDefault();
-                // Vamo pro alerta :)
-                window.location.href = "../alert.html?type=danger";
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            populateUserSummary();
-            const savedQtnum = parseInt(sessionStorage.getItem("qtnum") || "1");
-            showQuestion(savedQtnum);
-        });
-
-        function showQuestion(qtnum) {
-            const steps = document.querySelectorAll(".step");
-            steps.forEach((step, index) => {
-                if (index + 1 === qtnum) {
-                    step.style.display = "block";
-                } else {
-                    step.style.display = "none";
-                }
-                // previous button visibility only after step 1
-                document.getElementById("previous-button").style.display = qtnum > 1 ? "inline-block" : "none";
-                // next button only before last step
-                document.getElementById("next-button").style.display = qtnum < 8 ? "inline-block" : "none";
-                // submit button visibility only on last step
-                document.getElementById("submit-button").style.display = qtnum === 8 ? "inline-block" : "none";
-            });
-        }
-    </script>
-    <script>
-        sessionStorage.setItem("qtnum", 1);
-    </script>
-</body>
-
+        <script>
+            sessionStorage.setItem("qtnum", 1);
+        </script>
+    </body>
 </html>
